@@ -1,23 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainsbits.LDA", "..\..\..\..\..\..\PROYECTO_PERSONALES\Varu_V1\LDA\Brainsbits.LDA.csproj", "{840364AD-5BF9-4F08-98E0-7BC89E024EDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainsbits.LDA", "LDA\Brainsbits.LDA.csproj", "{840364AD-5BF9-4F08-98E0-7BC89E024EDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainsbits.LLB", "..\..\..\..\..\..\PROYECTO_PERSONALES\Varu_V1\LLB\Brainsbits.LLB.csproj", "{5902E5B6-13EB-45D2-A490-49161AEB956C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainsbits.LLB", "LLB\Brainsbits.LLB.csproj", "{5902E5B6-13EB-45D2-A490-49161AEB956C}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UI", "..\..\..\..\..\..\PROYECTO_PERSONALES\Varu_V1\UI\", "{C394247C-28CF-4601-8461-C7428D2A93B2}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UI", "UI\", "{C394247C-28CF-4601-8461-C7428D2A93B2}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		ProjectReferences = "{840364AD-5BF9-4F08-98E0-7BC89E024EDF}|Brainsbits.LDA.dll;{5902E5B6-13EB-45D2-A490-49161AEB956C}|Brainsbits.LLB.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/UI"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\PROYECTO_PERSONALES\Varu_V1\UI\"
+		Debug.AspNetCompiler.PhysicalPath = "UI\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\UI\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/UI"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\PROYECTO_PERSONALES\Varu_V1\UI\"
+		Release.AspNetCompiler.PhysicalPath = "UI\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\UI\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
