@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Principal2.Master" EnableViewStateMac="false"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Proceso.Master" EnableViewStateMac="false"
     AutoEventWireup="true" CodeFile="MenuPrincipal.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
