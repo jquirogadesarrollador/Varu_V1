@@ -35,7 +35,7 @@
                                 <td rowspan="0">
                                     <%--                                    <asp:Button ID="Button_NUEVO" runat="server" Text="Nuevo" CssClass="margin_botones"
                                         OnClick="Button_NUEVO_Click" ValidationGroup="NUEVO_CLIENTE" />--%>
-                                    <asp:Button ID="Button_NUEVO" style="width: 220px" runat="server" Text="Nuevo" CssClass='btn form-control btnCerSes fontBold'
+                                    <asp:Button ID="Button_NUEVO" Style="width: 220px" runat="server" Text="Nuevo" CssClass='btn form-control btnCerSes fontBold'
                                         OnClick="Button_NUEVO_Click" />
                                 </td>
                                 <td rowspan="0">
@@ -59,7 +59,7 @@
                                 <td rowspan="0">
                                     <%--                                    <input class="margin_botones" id="Button_CERRAR" onclick="window.close();" type="button"
                                         value="Salir" />--%>
-<%--                                    <asp:Button ID="Button_CERRAR" ValidationGroup="gghjg" CausesValidation="false" runat="server"
+                                    <%--                                    <asp:Button ID="Button_CERRAR" ValidationGroup="gghjg" CausesValidation="false" runat="server"
                                         Text="Salir" CssClass='btn form-control btnCerSes fontBold' />--%>
                                 </td>
                             </tr>
@@ -462,8 +462,7 @@
                                     <table class="table_control_registros">
                                         <tr>
                                             <td class="td_izq">
-                                                <asp:Label ID="Label_REGIONAL" CssClass="textoLabels" runat="server"
-                                                    Text="Regional"></asp:Label>
+                                                <asp:Label ID="Label_REGIONAL" CssClass="textoLabels" runat="server" Text="Regional"></asp:Label>
                                             </td>
                                             <td colspan="5" class="td_der">
                                                 <%--                                                <asp:DropDownList ID="DropDownList_REGIONAL" runat="server" Width="260px" AutoPostBack="True"
@@ -535,7 +534,7 @@
                                                 --%>
                                                 <div class="col-md-260">
                                                     <asp:TextBox ID="TextBox_TEL_EMP" runat="server" name="TextBox_TEL_EMP" CssClass="form-control input-md"
-                                                        placeholder="Digite el teléfono" MaxLength="30" ></asp:TextBox>
+                                                        placeholder="Digite el teléfono" MaxLength="30"></asp:TextBox>
                                                 </div>
                                             </td>
                                         </tr>
@@ -547,7 +546,7 @@
                                                 <%--<asp:TextBox ID="TextBox_TEL_EMP_1" runat="server" Width="260px" MaxLength="30" ValidationGroup="NUEVOCLIENTE"></asp:TextBox>--%>
                                                 <div class="col-md-260">
                                                     <asp:TextBox ID="TextBox_TEL_EMP_1" runat="server" name="TextBox_TEL_EMP_1" CssClass="form-control input-md"
-                                                        placeholder="Digite el teléfono" MaxLength="30" ></asp:TextBox>
+                                                        placeholder="Digite el teléfono" MaxLength="30"></asp:TextBox>
                                                 </div>
                                             </td>
                                         </tr>
@@ -556,11 +555,11 @@
                                                 <asp:Label ID="Label_CEL_EMP" runat="server" Text="Celular"></asp:Label>
                                             </td>
                                             <td colspan="5" class="td_der">
-<%--                                                <asp:TextBox ID="TextBox_CEL_EMP" runat="server" Width="260px" ValidationGroup="NUEVOCLIENTE"
+                                                <%--                                                <asp:TextBox ID="TextBox_CEL_EMP" runat="server" Width="260px" ValidationGroup="NUEVOCLIENTE"
                                                     MaxLength="15"></asp:TextBox>--%>
                                                 <div class="col-md-260">
                                                     <asp:TextBox ID="TextBox_CEL_EMP" runat="server" name="TextBox_CEL_EMP" CssClass="form-control input-md"
-                                                        placeholder="Digite el celular" MaxLength="15" ></asp:TextBox>
+                                                        placeholder="Digite el celular" MaxLength="15"></asp:TextBox>
                                                 </div>
                                                 <%--                                                <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_CEL_EMP" runat="server"
                                                     TargetControlID="TextBox_CEL_EMP" FilterType="Numbers" />
@@ -605,9 +604,15 @@
                                                 <asp:Label ID="Label_NOMBRE_SECCION" runat="server" Text="Sección"></asp:Label>
                                             </td>
                                             <td class="td_der">
-                                                <asp:DropDownList ID="DropDownList_NOMBRE_SECCION" runat="server" Width="650px" AutoPostBack="True"
+                                                <%--                                                <asp:DropDownList ID="DropDownList_NOMBRE_SECCION" runat="server" Width="650px" AutoPostBack="True"
                                                     OnSelectedIndexChanged="DropDownList_NOMBRE_SECCION_SelectedIndexChanged" ValidationGroup="NUEVOCLIENTE">
-                                                </asp:DropDownList>
+                                                </asp:DropDownList>--%>
+                                                <div class="col-md-650">
+                                                    <asp:DropDownList ID="DropDownList_NOMBRE_SECCION" runat="server" AutoPostBack="True"
+                                                        CssClass="form-control placeholder" name="DropDownList_NOMBRE_SECCION" OnSelectedIndexChanged="DropDownList_NOMBRE_SECCION_SelectedIndexChanged"
+                                                        ValidationGroup="NUEVOCLIENTE">
+                                                    </asp:DropDownList>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -615,9 +620,14 @@
                                                 <asp:Label ID="Label_NOMBRE_DIVISION" runat="server" Text="División"></asp:Label>
                                             </td>
                                             <td class="td_der">
-                                                <asp:DropDownList ID="DropDownList_DIVISION" runat="server" Width="650px" AutoPostBack="True"
+                                                <%--                                                <asp:DropDownList ID="DropDownList_DIVISION" runat="server" Width="650px" AutoPostBack="True"
                                                     OnSelectedIndexChanged="DropDownList_DIVISION_SelectedIndexChanged" ValidationGroup="NUEVOCLIENTE">
-                                                </asp:DropDownList>
+                                                </asp:DropDownList>--%>
+                                                <div class="col-md-650">
+                                                    <asp:DropDownList ID="DropDownList_DIVISION" runat="server" AutoPostBack="True" CssClass="form-control placeholder"
+                                                        OnSelectedIndexChanged="DropDownList_DIVISION_SelectedIndexChanged" ValidationGroup="NUEVOCLIENTE">
+                                                    </asp:DropDownList>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -625,9 +635,16 @@
                                                 <asp:Label ID="Label_NOMBRE_CLASE" runat="server" Text="Clase"></asp:Label>
                                             </td>
                                             <td class="td_der">
-                                                <asp:DropDownList ID="DropDownList_CLASE" runat="server" Width="650px" AutoPostBack="True"
+                                                <%--                                                <asp:DropDownList ID="DropDownList_CLASE" runat="server" Width="650px" AutoPostBack="True"
                                                     OnSelectedIndexChanged="DropDownList_CLASE_SelectedIndexChanged" ValidationGroup="NUEVOCLIENTE">
                                                 </asp:DropDownList>
+                                                --%>
+                                                <div class="col-md-650">
+                                                    <asp:DropDownList ID="DropDownList_CLASE" name="DropDownList_CLASE" runat="server"
+                                                        AutoPostBack="True" CssClass="form-control placeholder" OnSelectedIndexChanged="DropDownList_CLASE_SelectedIndexChanged"
+                                                        ValidationGroup="NUEVOCLIENTE">
+                                                    </asp:DropDownList>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -635,8 +652,14 @@
                                                 <asp:Label ID="Label_ACTIVIDAD" runat="server" Text="Actividad"></asp:Label>
                                             </td>
                                             <td class="td_der">
-                                                <asp:DropDownList ID="DropDownList_ACTIVIDAD" runat="server" Width="650px" ValidationGroup="NUEVOCLIENTE">
+                                                <%--                                                <asp:DropDownList ID="DropDownList_ACTIVIDAD" runat="server" Width="650px" ValidationGroup="NUEVOCLIENTE">
                                                 </asp:DropDownList>
+                                                --%>
+                                                <div class="col-md-650">
+                                                    <asp:DropDownList ID="DropDownList_ACTIVIDAD" name="DropDownList_ACTIVIDAD" runat="server"
+                                                        CssClass="form-control placeholder" ValidationGroup="NUEVOCLIENTE">
+                                                    </asp:DropDownList>
+                                                </div>
                                             </td>
                                         </tr>
                                     </table>
