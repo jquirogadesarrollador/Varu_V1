@@ -3,16 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <script src="../Scripts/jquery-1.11.3.js" type="text/javascript"></script>
-    <link href="../BootStrapV3.3.4/css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="../css/SLogin.css" rel="stylesheet" type="text/css" />
-    <link href="../css/SIconFont.css" rel="stylesheet" type="text/css" />
+    <script src="/UI/Scripts/jquery-1.11.3.js" type="text/javascript"></script>
+    <link href="/UI/BootStrapV3.3.4/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/UI/css/SLogin.css" rel="stylesheet" type="text/css" />
+    <link href="/UI/css/SIconFont.css" rel="stylesheet" type="text/css" />
     <!-- Funcionamiento en otros Navegadores -->
-    <script src="../Scripts/modernizr.min.js" type="text/javascript"></script>
-    <script src="../BootStrapV3.3.4/js/bootstrap.js" type="text/javascript"></script>
-    <link href="../BootStrapV3.3.4/css/bootstrapValidator.css" rel="stylesheet" type="text/css" />
-    <script src="../BootStrapV3.3.4/js/bootstrapValidator.js" type="text/javascript"></script>
-    <script src="../Scripts/validatorLogin.js" type="text/javascript"></script>
+    <script src="/UI/Scripts/modernizr.min.js" type="text/javascript"></script>
+    <script src="/UI/BootStrapV3.3.4/js/bootstrap.js" type="text/javascript"></script>
+    <link href="/UI/BootStrapV3.3.4/css/bootstrapValidator.css" rel="stylesheet" type="text/css" />
+    <script src="/UI/BootStrapV3.3.4/js/bootstrapValidator.js" type="text/javascript"></script>
+    <script src="/UI/Scripts/validatorLogin.js" type="text/javascript"></script>
     <%-- Iconos --%>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
