@@ -5,9 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <link href="../BootStrapV3.3.4/css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="../css/SLogin.css" rel="stylesheet" type="text/css"/>
-    <link  href="../css/SIconFont.css" rel="stylesheet" type="text/css"/>
-    
+    <link href="../css/SLogin.css" rel="stylesheet" type="text/css" />
+    <link href="../css/SIconFont.css" rel="stylesheet" type="text/css" />
     <script src="../Scripts/modernizr.min.js" type="text/javascript"></script>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -15,44 +14,46 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="PanelLogin">
-        <div class="divTituloForm">
-            <div class="letraTitulos" style="margin-top: 70%; font-size: 20.5px;">
-                NOMBRE DEL SOFTWARE
+        <div id="PanelLogin">
+            <div class="divTituloForm">
+                <div class="letraTitulos" style="margin-top: 70%; font-size: 20.5px;">
+                    NOMBRE DEL SOFTWARE
+                </div>
             </div>
-        </div>
-<%--        <div class="divTituloForm">
+            <%--        <div class="divTituloForm">
             <div class="letraTitulos" style="font-size: 25px;">
                 SOFTWARE
             </div>
         </div>
---%>        <div style="text-align: center; margin-top: 80px;">
-            <span class="icon-bienvenido_user btn-circleUser"></span>
-        </div>
-        <div style="text-align: center;">
-            <div class="fontBold" style="text-align: center; line-height: 20px; margin-top: 10%;
-                color: Black; font-weight: bold; font-size: 15px;">
-                Administrador
+            --%>
+            <div style="text-align: center; margin-top: 80px;">
+                <span class="icon-bienvenido_user btn-circleUser"></span>
             </div>
-        </div>
-<%--        <div style="text-align: center;">
+            <div style="text-align: center;">
+                <div class="fontBold" style="text-align: center; line-height: 20px; margin-top: 10%; color: Black; font-weight: bold; font-size: 15px;">
+                    Administrador
+                </div>
+            </div>
+            <%--        <div style="text-align: center;">
             <div class="fontBold" style="text-align: center; line-height: 20px; color: Black;
                 font-weight: bold; font-size: 15px;">
                 APELLIDOS
             </div>
         </div>
---%>        <div style="margin-left: 5%; margin-right: 5%; margin-top: 40px;">
-            <asp:Button ID="btnContrasena" runat="server" Text="CAMBIAR
-                CONTRASEÑA" CssClass='btn form-control fontBold' BackColor="#4F5F6F" ForeColor="White" />
+            --%>
+            <div style="margin-left: 5%; margin-right: 5%; margin-top: 40px;">
+                <asp:Button ID="btnContrasena" runat="server" Text="CAMBIAR
+                CONTRASEÑA"
+                    CssClass='btn form-control fontBold' BackColor="#4F5F6F" ForeColor="White" />
+            </div>
+            <div style="margin-left: 5%; margin-right: 5%; margin-top: 20px;">
+                <asp:Button ID="btnCerrarSesion" runat="server" Text="CERRAR SESIÓN" CssClass='btn form-control btnCerSes fontBold' />
+            </div>
         </div>
-        <div style="margin-left: 5%; margin-right: 5%; margin-top: 20px;">
-            <asp:Button ID="btnCerrarSesion" runat="server" Text="CERRAR SESIÓN" CssClass='btn form-control btnCerSes fontBold' />
+        <div style="margin-left: 300px; min-width: 900px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
         </div>
-    </div>
-    <div style="margin-left: 300px; min-width: 900px;">
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
     </form>
 </body>
 </html>

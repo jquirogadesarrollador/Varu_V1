@@ -4,8 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <link href="../css/SMaster.css" rel="stylesheet" type="text/css" />
-    <link href="../css/SForms.css" rel="stylesheet" type="text/css" />
+    <link href="../css/SMaster.css?ver=1" rel="stylesheet" type="text/css" />
+    <link href="../css/SForms.css?ver=6" rel="stylesheet" type="text/css" />
     <link href="../css/SMenuF.css" rel="stylesheet" type="text/css" />
     <link href="../BootStrapV3.3.4/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="../css/SCharts.css" rel="stylesheet" type="text/css" />
@@ -33,10 +33,10 @@
 </head>
 <body>
     <%--<form id="form1" runat="server">--%>
-    
+      <form id="Form1" runat="server" >
     <div class="containerSW open-sidebar">
         <div id="sidebar">
-        <form id="Form1" runat=server>
+      
             <ul id="menu-v">
             
                 <div style="text-align: center;">
@@ -78,7 +78,7 @@
                 
             </ul>
         </div>
-        </form>
+        
         <div class="main-content">
             <div class="content">
                 <div>
@@ -87,6 +87,7 @@
                 </div>
             </div>
         </div>
+        </form>
     </div>
 </body>
 </html>

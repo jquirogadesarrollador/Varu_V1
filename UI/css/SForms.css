@@ -193,8 +193,8 @@ select option
     padding: 0;
     width: 0px;
     position: absolute;
-    top: 43px;
-    left: 0px;
+    top: 150%;
+    left: -1500%;
     background: #ffffff;
 }
 
@@ -208,10 +208,10 @@ select option
 {
     display: block;
     float: none;
-    background: none;
+    /*background: none;*/
     margin: 0;
     padding: 0;
-    width: 150px;
+    width: 250px;
 }
 
 .menu ul li a
@@ -234,4 +234,8 @@ select option
     padding: 3px 20px;
     font-size: 15px;
     color: #4f5f6f;
+}
+
+.radioButtonAzulClaro{
+    color:#59c2e6;
 }

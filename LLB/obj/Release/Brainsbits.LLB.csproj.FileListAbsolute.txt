@@ -12,3 +12,22 @@ C:\Users\LuisBrayan\Documents\Visual Studio 2010\Projects\varu\LLB\bin\Release\B
 C:\Users\LuisBrayan\Documents\Visual Studio 2010\Projects\varu\LLB\bin\Release\Brainsbits.LLB.pdb
 C:\Users\LuisBrayan\Documents\Visual Studio 2010\Projects\varu\LLB\bin\Release\Brainsbits.LDA.dll
 C:\Users\LuisBrayan\Documents\Visual Studio 2010\Projects\varu\LLB\bin\Release\Brainsbits.LDA.pdb
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\Brainsbits.LLB.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\Brainsbits.LLB.pdb
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\Brainsbits.LDA.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\CrystalDecisions.CrystalReports.Design.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\CrystalDecisions.Data.AdoDotNetInterop.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\CrystalDecisions.ReportSource.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\CrystalDecisions.Shared.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\CrystalDecisions.VSDesigner.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\CrystalDecisions.Web.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\CrystalDecisions.Windows.Forms.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\FlashControlV71.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\SAPBusinessObjects.WPF.Viewer.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\SAPBusinessObjects.WPF.ViewerShared.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\bin\Release\Brainsbits.LDA.pdb
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\obj\Release\Brainsbits.LLB.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\obj\Release\Brainsbits.LLB.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LLB\obj\Release\Brainsbits.LLB.pdb

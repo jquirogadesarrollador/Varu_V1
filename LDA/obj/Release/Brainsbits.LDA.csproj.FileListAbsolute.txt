@@ -7,3 +7,8 @@ C:\Users\LuisBrayan\Documents\Visual Studio 2010\Projects\varu\LDA\bin\Release\B
 C:\Users\LuisBrayan\Documents\Visual Studio 2010\Projects\varu\LDA\obj\Release\Brainsbits.LDA.csprojResolveAssemblyReference.cache
 C:\Users\LuisBrayan\Documents\Visual Studio 2010\Projects\varu\LDA\obj\Release\Brainsbits.LDA.dll
 C:\Users\LuisBrayan\Documents\Visual Studio 2010\Projects\varu\LDA\obj\Release\Brainsbits.LDA.pdb
+C:\Users\Administrador\Source\Repos\Varu_V1\LDA\bin\Release\Brainsbits.LDA.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LDA\bin\Release\Brainsbits.LDA.pdb
+C:\Users\Administrador\Source\Repos\Varu_V1\LDA\obj\Release\Brainsbits.LDA.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Source\Repos\Varu_V1\LDA\obj\Release\Brainsbits.LDA.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LDA\obj\Release\Brainsbits.LDA.pdb

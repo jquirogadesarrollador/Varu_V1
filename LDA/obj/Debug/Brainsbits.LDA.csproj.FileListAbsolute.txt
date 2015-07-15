@@ -29,3 +29,8 @@ C:\PROYECTO_PERSONALES\Ayuda Rafael\Varu_V1-master\LDA\obj\Debug\Brainsbits.LDA.
 C:\PROYECTO_PERSONALES\Ayuda Rafael\Varu_V1-master\LDA\obj\Debug\Brainsbits.LDA.dll
 C:\PROYECTO_PERSONALES\Ayuda Rafael\Varu_V1-master\LDA\obj\Debug\Brainsbits.LDA.pdb
 C:\PROYECTO_PERSONALES\Varu_V1\LDA\obj\Debug\Brainsbits.LDA.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Source\Repos\Varu_V1\LDA\bin\Debug\Brainsbits.LDA.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LDA\bin\Debug\Brainsbits.LDA.pdb
+C:\Users\Administrador\Source\Repos\Varu_V1\LDA\obj\Debug\Brainsbits.LDA.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Source\Repos\Varu_V1\LDA\obj\Debug\Brainsbits.LDA.dll
+C:\Users\Administrador\Source\Repos\Varu_V1\LDA\obj\Debug\Brainsbits.LDA.pdb

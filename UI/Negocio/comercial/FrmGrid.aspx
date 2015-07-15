@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebForms/Principal.Master" AutoEventWireup="true"
-    CodeBehind="FrmGrid.aspx.cs" Inherits="AppPrototipoV2.WebForms.FrmForms" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Principal.Master" AutoEventWireup="true"
+    CodeFile="FrmGrid.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../Scripts/jsapi.js" type="text/javascript"></script>
