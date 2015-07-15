@@ -18,3 +18,13 @@ C:\PROYECTO_PERSONALES\Varu_V1\LDA\bin\Debug\Brainsbits.LDA.dll
 C:\PROYECTO_PERSONALES\Varu_V1\LDA\bin\Debug\Brainsbits.LDA.pdb
 C:\PROYECTO_PERSONALES\Varu_V1\LDA\obj\Debug\Brainsbits.LDA.dll
 C:\PROYECTO_PERSONALES\Varu_V1\LDA\obj\Debug\Brainsbits.LDA.pdb
+F:\Mis proyectos\grupo varu\documentacion\diseño\maquetado\entregas\entrega 13\Varu_V1-master\LDA\bin\Debug\Brainsbits.LDA.dll
+F:\Mis proyectos\grupo varu\documentacion\diseño\maquetado\entregas\entrega 13\Varu_V1-master\LDA\bin\Debug\Brainsbits.LDA.pdb
+F:\Mis proyectos\grupo varu\documentacion\diseño\maquetado\entregas\entrega 13\Varu_V1-master\LDA\obj\Debug\Brainsbits.LDA.dll
+F:\Mis proyectos\grupo varu\documentacion\diseño\maquetado\entregas\entrega 13\Varu_V1-master\LDA\obj\Debug\Brainsbits.LDA.pdb
+F:\Mis proyectos\grupo varu\documentacion\diseño\maquetado\entregas\entrega 13\Varu_V1-master\LDA\obj\Debug\Brainsbits.LDA.csprojResolveAssemblyReference.cache
+C:\PROYECTO_PERSONALES\Ayuda Rafael\Varu_V1-master\LDA\bin\Debug\Brainsbits.LDA.dll
+C:\PROYECTO_PERSONALES\Ayuda Rafael\Varu_V1-master\LDA\bin\Debug\Brainsbits.LDA.pdb
+C:\PROYECTO_PERSONALES\Ayuda Rafael\Varu_V1-master\LDA\obj\Debug\Brainsbits.LDA.csprojResolveAssemblyReference.cache
+C:\PROYECTO_PERSONALES\Ayuda Rafael\Varu_V1-master\LDA\obj\Debug\Brainsbits.LDA.dll
+C:\PROYECTO_PERSONALES\Ayuda Rafael\Varu_V1-master\LDA\obj\Debug\Brainsbits.LDA.pdb

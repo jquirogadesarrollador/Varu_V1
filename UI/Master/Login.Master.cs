@@ -98,7 +98,7 @@ public partial class _Default : System.Web.UI.MasterPage
                 {
                     EnviarNotificaciones();
                     //Response.Redirect("~/areas/areas.aspx");
-                    Response.Redirect("~/WebForms/MenuPrincipal.aspx");
+                    Response.Redirect("Principal.aspx");
                 }
             }
         }

@@ -32,13 +32,6 @@ public partial class _Default : System.Web.UI.Page
         Advertencia = 2
     }
 
-    private void configurar_paneles_popup(Panel panel_fondo, Panel panel_mensaje)
-    {
-        panel_fondo.CssClass = "panel_fondo_popup";
-
-        panel_mensaje.CssClass = "panel_popup";
-    }
-
     private void Activar(Acciones accion)
     {
         switch (accion)
@@ -62,7 +55,7 @@ public partial class _Default : System.Web.UI.Page
                 TextBox_DES_ACTIVIDAD.Enabled = true;
 
                 DropDownList_REGIONAL_COVERTURA.Enabled = true;
-                
+
                 DropDownList_GRUPO_EMPRESARIAL.Enabled = true;
                 DropDownList_ALIANZA.Enabled = true;
 
@@ -231,19 +224,13 @@ public partial class _Default : System.Web.UI.Page
         switch (accion)
         {
             case Acciones.Inicio:
-                Panel_INFO_ADICIONAL_MODULO.Visible = false;
                 Panel_FORM_BOTONES.Visible = false;
 
                 Button_NUEVO.Visible = false;
-                Button_NUEVO_1.Visible = false;
                 Button_MODIFICAR.Visible = false;
-                Button_MODIFICAR_1.Visible = false;
                 Button_GUARDAR.Visible = false;
-                Button_GUARDAR_1.Visible = false;
                 Button_CANCELAR.Visible = false;
-                Button_CANCELAR_1.Visible = false;
 
-                Panel_BOTONES_INTERNOS.Visible = false;
 
                 Panel_RESULTADOS_GRID.Visible = false;
 
@@ -263,8 +250,6 @@ public partial class _Default : System.Web.UI.Page
                 Panel_INFO_SIN_UNIDAD_NEGOCIO.Visible = false;
                 Panel_GRILLA_UNIDAD_NEGOCIO.Visible = false;
 
-                Panel_BOTONES_ACCION_1.Visible = false;
-
                 GridView_RIESGOS_CONFIGURADOS.Columns[0].Visible = false;
                 GridView_COVERTURA.Columns[0].Visible = false;
 
@@ -277,10 +262,6 @@ public partial class _Default : System.Web.UI.Page
                 Button_MODIFICAR.Visible = false;
                 Button_GUARDAR.Visible = false;
                 Button_CANCELAR.Visible = false;
-                Button_NUEVO_1.Visible = false;
-                Button_MODIFICAR_1.Visible = false;
-                Button_GUARDAR_1.Visible = false;
-                Button_CANCELAR_1.Visible = false;
 
                 Panel_CONTROL_REGISTRO.Visible = false;
                 break;
@@ -293,36 +274,26 @@ public partial class _Default : System.Web.UI.Page
         {
             case Acciones.Inicio:
 
-                Panel_INFO_ADICIONAL_MODULO.Visible = true;
 
                 Panel_FORM_BOTONES.Visible = true;
 
                 Button_NUEVO.Visible = true;
-                Button_NUEVO_1.Visible = true;
                 break;
             case Acciones.BusquedaEncontrada:
 
-                Panel_INFO_ADICIONAL_MODULO.Visible = true;
 
                 Panel_FORM_BOTONES.Visible = true;
 
                 Button_NUEVO.Visible = true;
-                Button_NUEVO_1.Visible = true;
 
                 Panel_RESULTADOS_GRID.Visible = true;
                 break;
             case Acciones.CargarEmpresa:
-                Panel_INFO_ADICIONAL_MODULO.Visible = true;
-                
+
                 Panel_FORM_BOTONES.Visible = true;
-                Panel_BOTONES_ACCION_1.Visible = true;
 
                 Button_NUEVO.Visible = true;
-                Button_NUEVO_1.Visible = true;
                 Button_MODIFICAR.Visible = true;
-                Button_MODIFICAR_1.Visible = true;
-
-                Panel_BOTONES_INTERNOS.Visible = true;
 
                 Panel_FORMULARIO.Visible = true;
                 Panel_CONTROL_REGISTRO.Visible = true;
@@ -335,15 +306,11 @@ public partial class _Default : System.Web.UI.Page
                 Panel_GRILLA_UNIDAD_NEGOCIO.Visible = true;
                 break;
             case Acciones.NuevaEmpresa:
-                Panel_INFO_ADICIONAL_MODULO.Visible = true;
 
                 Panel_FORM_BOTONES.Visible = true;
-                Panel_BOTONES_ACCION_1.Visible = true;
 
                 Button_GUARDAR.Visible = true;
-                Button_GUARDAR_1.Visible = true;
                 Button_CANCELAR.Visible = true;
-                Button_CANCELAR_1.Visible = true;
 
                 Panel_FORMULARIO.Visible = true;
 
@@ -354,11 +321,9 @@ public partial class _Default : System.Web.UI.Page
                 GridView_COVERTURA.Columns[0].Visible = true;
                 break;
             case Acciones.ModificarEmpresa:
-                
+
                 Button_GUARDAR.Visible = true;
                 Button_CANCELAR.Visible = true;
-                Button_GUARDAR_1.Visible = true;
-                Button_CANCELAR_1.Visible = true;
 
                 Panel_SELECCIONAR_RIESGO.Visible = true;
                 Panel_COBERTURA_DROPS.Visible = true;
@@ -369,47 +334,41 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
-    private void configurarCaracteresAceptadosBusqueda(Boolean letras, Boolean numeros)
-    {
-        FilteredTextBoxExtender_TextBox_BUSCAR_Numbers.Enabled = numeros;
-        FilteredTextBoxExtender_TextBox_BUSCAR_Letras.Enabled = letras;
-    }
+    //private void cargar_DropDownList_BUSCAR()
+    //{
+    //    DropDownList_BUSCAR.Items.Clear();
 
-    private void cargar_DropDownList_BUSCAR()
-    {
-        DropDownList_BUSCAR.Items.Clear();
+    //    ListItem item = new ListItem("Seleccione...", "");
+    //    DropDownList_BUSCAR.Items.Add(item);
 
-        ListItem item = new ListItem("Seleccione...", "");
-        DropDownList_BUSCAR.Items.Add(item);
+    //    item = new ListItem("Razón social", "RAZ_SOCIAL");
+    //    DropDownList_BUSCAR.Items.Add(item);
 
-        item = new ListItem("Razón social", "RAZ_SOCIAL");
-        DropDownList_BUSCAR.Items.Add(item);
+    //    item = new ListItem("Grupo Empresarial", "GRUPO_EMPRESARIAL");
+    //    DropDownList_BUSCAR.Items.Add(item);
 
-        item = new ListItem("Grupo Empresarial", "GRUPO_EMPRESARIAL");
-        DropDownList_BUSCAR.Items.Add(item);
+    //    item = new ListItem("NIT", "NIT_EMPRESA");
+    //    DropDownList_BUSCAR.Items.Add(item);
 
-        item = new ListItem("NIT", "NIT_EMPRESA");
-        DropDownList_BUSCAR.Items.Add(item);
+    //    item = new ListItem("Código de Cliente", "COD_EMPRESA");
+    //    DropDownList_BUSCAR.Items.Add(item);
 
-        item = new ListItem("Código de Cliente", "COD_EMPRESA");
-        DropDownList_BUSCAR.Items.Add(item);
+    //    item = new ListItem("Regional", "REGIONAL");
+    //    DropDownList_BUSCAR.Items.Add(item);
 
-        item = new ListItem("Regional", "REGIONAL");
-        DropDownList_BUSCAR.Items.Add(item);
+    //    item = new ListItem("Ciudad", "CIUDAD");
+    //    DropDownList_BUSCAR.Items.Add(item);
 
-        item = new ListItem("Ciudad", "CIUDAD");
-        DropDownList_BUSCAR.Items.Add(item);
+    //    item = new ListItem("Comercial", "COMERCIAL");
+    //    DropDownList_BUSCAR.Items.Add(item);
 
-        item = new ListItem("Comercial", "COMERCIAL");
-        DropDownList_BUSCAR.Items.Add(item);
-
-        DropDownList_BUSCAR.DataBind();
-    }
+    //    DropDownList_BUSCAR.DataBind();
+    //}
 
     private void iniciar_seccion_de_busqueda()
     {
         TextBox_BUSCAR.Text = "";
-        cargar_DropDownList_BUSCAR();
+        //cargar_DropDownList_BUSCAR();
     }
 
     private void cargar_DropDownList_REGIONAL_COVERTURA()
@@ -577,10 +536,7 @@ public partial class _Default : System.Web.UI.Page
         switch (accion)
         {
             case Acciones.Inicio:
-                
-                Label_INFO_ADICIONAL_MODULO.Text = "BUSQUEDA Y CREACIÓN DE CLIENTES";
 
-                configurarCaracteresAceptadosBusqueda(true, true);
 
                 iniciar_seccion_de_busqueda();
 
@@ -592,7 +548,6 @@ public partial class _Default : System.Web.UI.Page
                 break;
             case Acciones.NuevaEmpresa:
                 this.Title = "NUEVO CLIENTE";
-                Label_INFO_ADICIONAL_MODULO.Text = "NUEVO CLIENTE";
 
                 HiddenField_ID_EMPRESA.Value = "";
                 HiddenField_ESTADO_EMPRESA.Value = "";
@@ -612,8 +567,6 @@ public partial class _Default : System.Web.UI.Page
     private void Iniciar()
     {
         this.Title = "Clientes";
-
-        configurar_paneles_popup(Panel_FONDO_MENSAJE, Panel_MENSAJES);
 
         Ocultar(Acciones.Inicio);
         Desactivar(Acciones.Inicio);
@@ -660,41 +613,41 @@ public partial class _Default : System.Web.UI.Page
         panel_mensaje.Visible = false;
     }
 
-    private void RolPermisos()
-    {
-        #region variables
-        int contadorPermisos = 0;
-        #endregion variables
+    //private void RolPermisos()
+    //{
+    //    #region variables
+    //    int contadorPermisos = 0;
+    //    #endregion variables
 
-        seguridad _seguridad = new seguridad(Session["idEmpresa"].ToString(), Session["USU_LOG"].ToString());
+    //    seguridad _seguridad = new seguridad(Session["idEmpresa"].ToString(), Session["USU_LOG"].ToString());
 
-        tools _tools = new tools();
+    //    tools _tools = new tools();
 
-        String rutaScript = _tools.obtenerRutaVerdaderaScript(Request.ServerVariables["SCRIPT_NAME"]);
+    //    String rutaScript = _tools.obtenerRutaVerdaderaScript(Request.ServerVariables["SCRIPT_NAME"]);
 
-        DataTable tablaInformacionPermisos = _seguridad.ObtenerPermisosBotones(NOMBRE_AREA, rutaScript);
+    //    DataTable tablaInformacionPermisos = _seguridad.ObtenerPermisosBotones(NOMBRE_AREA, rutaScript);
 
-        maestrasInterfaz _maestrasInterfaz = new maestrasInterfaz();
+    //    maestrasInterfaz _maestrasInterfaz = new maestrasInterfaz();
 
-        contadorPermisos = _maestrasInterfaz.RolPermisos(this, tablaInformacionPermisos);
+    //    contadorPermisos = _maestrasInterfaz.RolPermisos(this, tablaInformacionPermisos);
 
-        if (contadorPermisos <= 0)
-        {
-            SecureQueryString QueryStringSeguro;
-            QueryStringSeguro = new SecureQueryString(_tools.byteParaQueryStringSeguro());
+    //    if (contadorPermisos <= 0)
+    //    {
+    //        SecureQueryString QueryStringSeguro;
+    //        QueryStringSeguro = new SecureQueryString(_tools.byteParaQueryStringSeguro());
 
-            QueryStringSeguro["img_area"] = "restringido";
-            QueryStringSeguro["nombre_area"] = "ACCESO RESTRINGIDO";
-            QueryStringSeguro["nombre_modulo"] = "ACCESO RESTRINGIDO";
-            QueryStringSeguro["accion"] = "inicial";
+    //        QueryStringSeguro["img_area"] = "restringido";
+    //        QueryStringSeguro["nombre_area"] = "ACCESO RESTRINGIDO";
+    //        QueryStringSeguro["nombre_modulo"] = "ACCESO RESTRINGIDO";
+    //        QueryStringSeguro["accion"] = "inicial";
 
-            Response.Redirect("~/sinPermisos/sinPermisos.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString()));
-        }
-        else
-        {
-            Session["URL_ANTERIOR"] = HttpContext.Current.Request.RawUrl;
-        }
-    }
+    //        Response.Redirect("~/sinPermisos/sinPermisos.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString()));
+    //    }
+    //    else
+    //    {
+    //        Session["URL_ANTERIOR"] = HttpContext.Current.Request.RawUrl;
+    //    }
+    //}
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -706,12 +659,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_LoadComplete(object sender, EventArgs e)
     {
-        RolPermisos();
-    }
-
-    protected void Button_CERRAR_MENSAJE_Click(object sender, EventArgs e)
-    {
-        ocultar_mensaje(Panel_FONDO_MENSAJE, Panel_MENSAJES);
+        //RolPermisos();
     }
 
     protected void Button_NUEVO_Click(object sender, EventArgs e)
@@ -804,7 +752,7 @@ public partial class _Default : System.Web.UI.Page
 
         String FAC_NAL = DropDownList_FAC_NAL.SelectedValue.ToString();
 
-        Decimal ID_ALIANZA = 0; 
+        Decimal ID_ALIANZA = 0;
         if (DropDownList_ALIANZA.SelectedIndex > 0)
         {
             ID_ALIANZA = Convert.ToDecimal(DropDownList_ALIANZA.SelectedValue);
@@ -814,7 +762,7 @@ public partial class _Default : System.Web.UI.Page
         String EMP_ESTADO = DropDownList_EMP_ESTADO.SelectedValue.ToString();
         String EMP_EXC_IVA = DropDownList_EMP_EXC_IVA.SelectedValue.ToString();
 
-        String TEL_EMP1; 
+        String TEL_EMP1;
         if (TextBox_TEL_EMP_1.Text.ToUpper() == "")
         {
             TEL_EMP1 = "Ninguno";
@@ -824,7 +772,7 @@ public partial class _Default : System.Web.UI.Page
             TEL_EMP1 = _tools.RemplazarCaracteresEnString(TextBox_TEL_EMP_1.Text.ToUpper().Trim());
         }
 
-        String NUM_CELULAR; 
+        String NUM_CELULAR;
         if (TextBox_CEL_EMP.Text.ToUpper().Trim() == "")
         {
             NUM_CELULAR = "Ninguno";
@@ -841,7 +789,7 @@ public partial class _Default : System.Web.UI.Page
         {
             ID_GRUPO_EMPRESARIAL = Convert.ToDecimal(DropDownList_GRUPO_EMPRESARIAL.SelectedValue);
         }
-        
+
         String ID_CIUDAD_CC_REP_LEGAL = DropDownList_CIU_CC_REP_LEGAL.SelectedValue.ToString();
 
         String ID_SERVICIO;
@@ -859,13 +807,13 @@ public partial class _Default : System.Web.UI.Page
 
         if (ID_EMPRESA == 0)
         {
-            Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
+            //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
         }
         else
         {
             Cargar(ID_EMPRESA);
 
-            Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "El cliente " + RAZ_SOCIAL + " fue creado correctamente y se le asignó el ID " + ID_EMPRESA.ToString(), Proceso.Correcto);
+            //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "El cliente " + RAZ_SOCIAL + " fue creado correctamente y se le asignó el ID " + ID_EMPRESA.ToString(), Proceso.Correcto);
         }
     }
 
@@ -945,7 +893,7 @@ public partial class _Default : System.Web.UI.Page
         String FAC_NAL = DropDownList_FAC_NAL.SelectedValue.ToString();
 
 
-        Decimal ID_ALIANZA = 0; 
+        Decimal ID_ALIANZA = 0;
         if (DropDownList_ALIANZA.SelectedIndex > 0)
         {
             ID_ALIANZA = Convert.ToDecimal(DropDownList_ALIANZA.SelectedValue);
@@ -955,7 +903,7 @@ public partial class _Default : System.Web.UI.Page
         String EMP_ESTADO = DropDownList_EMP_ESTADO.SelectedValue.ToString();
         String EMP_EXC_IVA = DropDownList_EMP_EXC_IVA.SelectedValue.ToString();
 
-        String TEL_EMP1; 
+        String TEL_EMP1;
         if (TextBox_TEL_EMP_1.Text.ToUpper() == "")
         {
             TEL_EMP1 = "Ninguno";
@@ -965,7 +913,7 @@ public partial class _Default : System.Web.UI.Page
             TEL_EMP1 = _tools.RemplazarCaracteresEnString(TextBox_TEL_EMP_1.Text.ToUpper().Trim());
         }
 
-        String NUM_CELULAR; 
+        String NUM_CELULAR;
         if (TextBox_CEL_EMP.Text.ToUpper().Trim() == "")
         {
             NUM_CELULAR = "Ninguno";
@@ -978,7 +926,7 @@ public partial class _Default : System.Web.UI.Page
         String ID_ACTIVIDAD = DropDownList_ACTIVIDAD.SelectedValue.ToString();
 
         Decimal ID_GRUPO_EMPRESARIAL = 0;
-        if(DropDownList_GRUPO_EMPRESARIAL.SelectedIndex > 0)
+        if (DropDownList_GRUPO_EMPRESARIAL.SelectedIndex > 0)
         {
             ID_GRUPO_EMPRESARIAL = Convert.ToDecimal(DropDownList_GRUPO_EMPRESARIAL.SelectedValue);
         }
@@ -1013,29 +961,29 @@ public partial class _Default : System.Web.UI.Page
 
         if (resultadoActualizacion == true)
         {
-            maestrasInterfaz _maestrasInterfaz = new maestrasInterfaz();
-            _maestrasInterfaz.CargarEnBdElManualServicioActual(ID_EMPRESA);
+            //maestrasInterfaz _maestrasInterfaz = new maestrasInterfaz();
+            //_maestrasInterfaz.CargarEnBdElManualServicioActual(ID_EMPRESA);
 
             Cargar(ID_EMPRESA);
-            Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "El cliente " + RAZ_SOCIAL + " fue actualizado correctamente", Proceso.Correcto);
+            //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "El cliente " + RAZ_SOCIAL + " fue actualizado correctamente", Proceso.Correcto);
         }
         else
         {
-            Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
+            //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
         }
-    }   
+    }
 
     protected void Button_GUARDAR_Click(object sender, EventArgs e)
     {
         if (GridView_COVERTURA.Rows.Count <= 0)
         {
-            Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "Para poder continuar debe especificar por lo menos una ciudad en la sección de COBERTURA DEL CLIENTE.", Proceso.Advertencia);
+            //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "Para poder continuar debe especificar por lo menos una ciudad en la sección de COBERTURA DEL CLIENTE.", Proceso.Advertencia);
         }
         else
         {
             if (GridView_RIESGOS_CONFIGURADOS.Rows.Count <= 0)
             {
-                Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "Para poder continuar debe especificar por lo menos un riesgo en la sección de RIESGOS DEL CLIENTE.", Proceso.Advertencia);
+                //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "Para poder continuar debe especificar por lo menos un riesgo en la sección de RIESGOS DEL CLIENTE.", Proceso.Advertencia);
             }
             else
             {
@@ -1047,7 +995,7 @@ public partial class _Default : System.Web.UI.Page
                 {
                     Modificar();
                 }
-            }            
+            }
         }
     }
     protected void Button_CANCELAR_Click(object sender, EventArgs e)
@@ -1057,137 +1005,29 @@ public partial class _Default : System.Web.UI.Page
         Mostrar(Acciones.Inicio);
         Cargar(Acciones.Inicio);
     }
-    protected void DropDownList_BUSCAR_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        if (DropDownList_BUSCAR.SelectedValue == "")
-        {
-            configurarCaracteresAceptadosBusqueda(true, true);
-        }
-        else
-        {
-            if (DropDownList_BUSCAR.SelectedValue == "RAZ_SOCIAL")
-            {
-                configurarCaracteresAceptadosBusqueda(true, false);
-            }
-            else
-            {
-                if (DropDownList_BUSCAR.SelectedValue == "GRUPO_EMPRESARIAL")
-                {
-                    configurarCaracteresAceptadosBusqueda(true, false);
-                }
-                else
-                {
-                    if (DropDownList_BUSCAR.SelectedValue == "NIT_EMPRESA")
-                    {
-                        configurarCaracteresAceptadosBusqueda(false, true);
-                    }
-                    else
-                    {
-                        if (DropDownList_BUSCAR.SelectedValue == "COD_EMPRESA")
-                        {
-                            configurarCaracteresAceptadosBusqueda(false, true);
-                        }
-                        else
-                        {
-                            if (DropDownList_BUSCAR.SelectedValue == "REGIONAL")
-                            {
-                                configurarCaracteresAceptadosBusqueda(true, false);
-                            }
-                            else
-                            {
-                                if (DropDownList_BUSCAR.SelectedValue == "CIUDAD")
-                                {
-                                    configurarCaracteresAceptadosBusqueda(true, false);
-                                }
-                                else
-                                {
-                                    if (DropDownList_BUSCAR.SelectedValue == "COMERCIAL")
-                                    {
-                                        configurarCaracteresAceptadosBusqueda(true, false);
-                                    }
-                                }   
-                            }
-                        }
-                    }
-                }
-            } 
-        }
-
-        TextBox_BUSCAR.Text = "";
-    }
 
     private void Buscar()
     {
         String datosCapturados = TextBox_BUSCAR.Text.ToUpper();
-        String campo = DropDownList_BUSCAR.SelectedValue.ToString();
 
         cliente _cliente = new cliente(Session["idEmpresa"].ToString(), Session["USU_LOG"].ToString());
 
         DataTable tablaResultadosBusqueda = new DataTable();
 
-        if (DropDownList_BUSCAR.SelectedValue == "RAZ_SOCIAL")
-        {
-            tablaResultadosBusqueda = _cliente.ObtenerEmpresaConRazSocialSoloComercial(datosCapturados);
-        }
-        else
-        {
-            if (DropDownList_BUSCAR.SelectedValue == "GRUPO_EMPRESARIAL")
-            {
-                tablaResultadosBusqueda = _cliente.ObtenerEmpresaConGrupoEmpresarialSoloComercial(datosCapturados);
-            }
-            else
-            {
-                if (DropDownList_BUSCAR.SelectedValue == "NIT_EMPRESA")
-                {
-                    tablaResultadosBusqueda = _cliente.ObtenerEmpresaConNitEmpresaSoloComercial(datosCapturados);
-                }
-                else
-                {
-                    if (DropDownList_BUSCAR.SelectedValue == "COD_EMPRESA")
-                    {
-                        tablaResultadosBusqueda = _cliente.ObtenerEmpresaConCodEmpresaSoloComercial(datosCapturados);
-                    }
-                    else
-                    {
-                        if (DropDownList_BUSCAR.SelectedValue == "REGIONAL")
-                        {
-                            tablaResultadosBusqueda = _cliente.ObtenerEmpresaConRegionalSoloComercial(datosCapturados);
-                        }
-                        else
-                        {
-                            if (DropDownList_BUSCAR.SelectedValue == "CIUDAD")
-                            {
-                                tablaResultadosBusqueda = _cliente.ObtenerEmpresaConCiudadSoloComercial(datosCapturados);
-                            }
-                            else
-                            {
-                                if (DropDownList_BUSCAR.SelectedValue == "COMERCIAL")
-                                {
-                                    tablaResultadosBusqueda = _cliente.ObtenerEmpresaConComercialSoloComercial(datosCapturados);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
         if (tablaResultadosBusqueda.Rows.Count <= 0)
         {
             if (_cliente.MensajeError != null)
             {
-                Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
-                Label_MENSAJE.Text = _cliente.MensajeError;
+                //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
             }
             else
             {
-                Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "No se encontraron registros que cumplieran los datos de busqueda.", Proceso.Advertencia);
+                //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "No se encontraron registros que cumplieran los datos de busqueda.", Proceso.Advertencia);
             }
 
             Ocultar(Acciones.Inicio);
             Mostrar(Acciones.Inicio);
 
-            Label_INFO_ADICIONAL_MODULO.Text = "BUSQUEDA Y CREACIÓON DE CLIENTES";
         }
         else
         {
@@ -1215,198 +1055,198 @@ public partial class _Default : System.Web.UI.Page
 
     private void cargar_menu_interno(Decimal ID_EMPRESA)
     {
-        tools _tools = new tools();
-        SecureQueryString QueryStringSeguro;
+        //tools _tools = new tools();
+        //SecureQueryString QueryStringSeguro;
 
-        QueryStringSeguro = new SecureQueryString(_tools.byteParaQueryStringSeguro());
-        QueryStringSeguro["img_area"] = "comercial";
-        QueryStringSeguro["nombre_area"] = "GESTIÓN COMERCIAL";
-
-
-
-        TableRow filaTabla;
-        TableCell celdaTabla;
-        HyperLink link;
-        Image imagen;
+        //QueryStringSeguro = new SecureQueryString(_tools.byteParaQueryStringSeguro());
+        //QueryStringSeguro["img_area"] = "comercial";
+        //QueryStringSeguro["nombre_area"] = "GESTIÓN COMERCIAL";
 
 
 
-        int contadorFilas = 0;
+        //TableRow filaTabla;
+        //TableCell celdaTabla;
+        //HyperLink link;
+        //Image imagen;
 
 
 
-        filaTabla = new TableRow();
-        filaTabla.ID = "row_" + contadorFilas.ToString();
-
-        celdaTabla = new TableCell();
-        celdaTabla.ID = "cell_1_row_" + contadorFilas.ToString();
-        link = new HyperLink();
-        link.ID = "link_contratos";
-        QueryStringSeguro["nombre_modulo"] = "CONTRATOS DE SERVICIO";
-        QueryStringSeguro["accion"] = "inicial";
-        QueryStringSeguro["reg"] = ID_EMPRESA.ToString();
-        link.NavigateUrl = "~/comercial/contratosServicio.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
-        link.CssClass = "botones_menu_principal";
-        link.Target = "_blank";
-        imagen = new Image();
-        imagen.ImageUrl = "~/imagenes/areas/bContratosServicioEstandar.png";
-        imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bContratosServicioAccion.png'");
-        imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bContratosServicioEstandar.png'");
-        imagen.CssClass = "botones_menu_principal";
-        link.Controls.Add(imagen);
-
-        celdaTabla.Controls.Add(link);
-
-        filaTabla.Cells.Add(celdaTabla);
-
-        celdaTabla = new TableCell();
-        celdaTabla.ID = "cell_2_row_" + contadorFilas.ToString();
-        link = new HyperLink();
-        link.ID = "link_condiciones";
-        QueryStringSeguro["nombre_modulo"] = "CONDICIONES ECONÓMICAS";
-        if (Session["idEmpresa"].ToString() == "1")
-        {
-            link.NavigateUrl = "~/comercial/condicionesEconomicasSertempo.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
-        }
-        else
-        {
-            if (Session["idEmpresa"].ToString() == "3")
-            {
-                link.NavigateUrl = "~/comercial/condicionesEconomicasEficiencia.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
-            }
-        }
-        link.CssClass = "botones_menu_principal";
-        link.Target = "_blank";
-        imagen = new Image();
-        imagen.ImageUrl = "~/imagenes/areas/bCondicionesComercialesEstandar.png";
-        imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bCondicionesComercialesAccion.png'");
-        imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bCondicionesComercialesEstandar.png'");
-        imagen.CssClass = "botones_menu_principal";
-        link.Controls.Add(imagen);
-
-        celdaTabla.Controls.Add(link);
-
-        filaTabla.Cells.Add(celdaTabla);
+        //int contadorFilas = 0;
 
 
 
+        //filaTabla = new TableRow();
+        //filaTabla.ID = "row_" + contadorFilas.ToString();
 
-        celdaTabla = new TableCell();
-        celdaTabla.ID = "cell_3_row_" + contadorFilas.ToString();
-        link = new HyperLink();
-        link.ID = "link_contactos";
-        QueryStringSeguro["nombre_modulo"] = "CONTÁCTOS";
-        QueryStringSeguro["proceso"] = "1"; 
-        link.NavigateUrl = "~/maestros/contactos.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
-        link.CssClass = "botones_menu_principal";
-        link.Target = "_blank";
-        imagen = new Image();
-        imagen.ImageUrl = "~/imagenes/areas/bContactosComercialesEstandar.png";
-        imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bContactosComercialesAccion.png'");
-        imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bContactosComercialesEstandar.png'");
-        imagen.CssClass = "botones_menu_principal";
-        link.Controls.Add(imagen);
+        //celdaTabla = new TableCell();
+        //celdaTabla.ID = "cell_1_row_" + contadorFilas.ToString();
+        //link = new HyperLink();
+        //link.ID = "link_contratos";
+        //QueryStringSeguro["nombre_modulo"] = "CONTRATOS DE SERVICIO";
+        //QueryStringSeguro["accion"] = "inicial";
+        //QueryStringSeguro["reg"] = ID_EMPRESA.ToString();
+        //link.NavigateUrl = "~/comercial/contratosServicio.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
+        //link.CssClass = "botones_menu_principal";
+        //link.Target = "_blank";
+        //imagen = new Image();
+        //imagen.ImageUrl = "~/imagenes/areas/bContratosServicioEstandar.png";
+        //imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bContratosServicioAccion.png'");
+        //imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bContratosServicioEstandar.png'");
+        //imagen.CssClass = "botones_menu_principal";
+        //link.Controls.Add(imagen);
 
-        celdaTabla.Controls.Add(link);
+        //celdaTabla.Controls.Add(link);
 
-        filaTabla.Cells.Add(celdaTabla);
+        //filaTabla.Cells.Add(celdaTabla);
 
-        celdaTabla = new TableCell();
-        celdaTabla.ID = "cell_4_row_" + contadorFilas.ToString();
-        link = new HyperLink();
-        link.ID = "link_historial";
-        QueryStringSeguro["nombre_modulo"] = "HISTORIAL DE ACTIVACIÓN";
-        link.NavigateUrl = "~/comercial/historialActivacion.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
-        link.CssClass = "botones_menu_principal";
-        link.Target = "_blank";
-        imagen = new Image();
-        imagen.ImageUrl = "~/imagenes/areas/bHistorialActivacionesEstandar.png";
-        imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bHistorialActivacionesAccion.png'");
-        imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bHistorialActivacionesEstandar.png'");
-        imagen.CssClass = "botones_menu_principal";
-        link.Controls.Add(imagen);
+        //celdaTabla = new TableCell();
+        //celdaTabla.ID = "cell_2_row_" + contadorFilas.ToString();
+        //link = new HyperLink();
+        //link.ID = "link_condiciones";
+        //QueryStringSeguro["nombre_modulo"] = "CONDICIONES ECONÓMICAS";
+        //if (Session["idEmpresa"].ToString() == "1")
+        //{
+        //    link.NavigateUrl = "~/comercial/condicionesEconomicasSertempo.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
+        //}
+        //else
+        //{
+        //    if (Session["idEmpresa"].ToString() == "3")
+        //    {
+        //        link.NavigateUrl = "~/comercial/condicionesEconomicasEficiencia.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
+        //    }
+        //}
+        //link.CssClass = "botones_menu_principal";
+        //link.Target = "_blank";
+        //imagen = new Image();
+        //imagen.ImageUrl = "~/imagenes/areas/bCondicionesComercialesEstandar.png";
+        //imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bCondicionesComercialesAccion.png'");
+        //imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bCondicionesComercialesEstandar.png'");
+        //imagen.CssClass = "botones_menu_principal";
+        //link.Controls.Add(imagen);
 
-        celdaTabla.Controls.Add(link);
+        //celdaTabla.Controls.Add(link);
 
-        filaTabla.Cells.Add(celdaTabla);
+        //filaTabla.Cells.Add(celdaTabla);
 
 
 
 
+        //celdaTabla = new TableCell();
+        //celdaTabla.ID = "cell_3_row_" + contadorFilas.ToString();
+        //link = new HyperLink();
+        //link.ID = "link_contactos";
+        //QueryStringSeguro["nombre_modulo"] = "CONTÁCTOS";
+        //QueryStringSeguro["proceso"] = "1"; 
+        //link.NavigateUrl = "~/maestros/contactos.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
+        //link.CssClass = "botones_menu_principal";
+        //link.Target = "_blank";
+        //imagen = new Image();
+        //imagen.ImageUrl = "~/imagenes/areas/bContactosComercialesEstandar.png";
+        //imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bContactosComercialesAccion.png'");
+        //imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bContactosComercialesEstandar.png'");
+        //imagen.CssClass = "botones_menu_principal";
+        //link.Controls.Add(imagen);
+
+        //celdaTabla.Controls.Add(link);
+
+        //filaTabla.Cells.Add(celdaTabla);
+
+        //celdaTabla = new TableCell();
+        //celdaTabla.ID = "cell_4_row_" + contadorFilas.ToString();
+        //link = new HyperLink();
+        //link.ID = "link_historial";
+        //QueryStringSeguro["nombre_modulo"] = "HISTORIAL DE ACTIVACIÓN";
+        //link.NavigateUrl = "~/comercial/historialActivacion.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
+        //link.CssClass = "botones_menu_principal";
+        //link.Target = "_blank";
+        //imagen = new Image();
+        //imagen.ImageUrl = "~/imagenes/areas/bHistorialActivacionesEstandar.png";
+        //imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bHistorialActivacionesAccion.png'");
+        //imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bHistorialActivacionesEstandar.png'");
+        //imagen.CssClass = "botones_menu_principal";
+        //link.Controls.Add(imagen);
+
+        //celdaTabla.Controls.Add(link);
+
+        //filaTabla.Cells.Add(celdaTabla);
 
 
-        celdaTabla = new TableCell();
-        celdaTabla.ID = "cell_5_row_" + contadorFilas.ToString();
-        link = new HyperLink();
-        link.ID = "link_unidad_negocio";
-        QueryStringSeguro["nombre_modulo"] = "UNIDAD DE NEGOCIO";
-        QueryStringSeguro["ID_EMPRESA"] = ID_EMPRESA.ToString();
-        link.NavigateUrl = "~/comercial/UnidadesNegocio.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
-        link.CssClass = "botones_menu_principal";
-        link.Target = "_blank";
-        imagen = new Image();
-        imagen.ImageUrl = "~/imagenes/areas/bUnidadNegocioEstandar.png";
-        imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bUnidadNegocioAccion.png'");
-        imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bUnidadNegocioEstandar.png'");
-        imagen.CssClass = "botones_menu_principal";
-        link.Controls.Add(imagen);
-
-        celdaTabla.Controls.Add(link);
-
-        filaTabla.Cells.Add(celdaTabla);
-
-        Table_MENU.Rows.Add(filaTabla);
 
 
 
 
-        contadorFilas = 1;
+        //celdaTabla = new TableCell();
+        //celdaTabla.ID = "cell_5_row_" + contadorFilas.ToString();
+        //link = new HyperLink();
+        //link.ID = "link_unidad_negocio";
+        //QueryStringSeguro["nombre_modulo"] = "UNIDAD DE NEGOCIO";
+        //QueryStringSeguro["ID_EMPRESA"] = ID_EMPRESA.ToString();
+        //link.NavigateUrl = "~/comercial/UnidadesNegocio.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
+        //link.CssClass = "botones_menu_principal";
+        //link.Target = "_blank";
+        //imagen = new Image();
+        //imagen.ImageUrl = "~/imagenes/areas/bUnidadNegocioEstandar.png";
+        //imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bUnidadNegocioAccion.png'");
+        //imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bUnidadNegocioEstandar.png'");
+        //imagen.CssClass = "botones_menu_principal";
+        //link.Controls.Add(imagen);
 
-        filaTabla = new TableRow();
-        filaTabla.ID = "t1_row_" + contadorFilas.ToString();
+        //celdaTabla.Controls.Add(link);
 
-        celdaTabla = new TableCell();
-        celdaTabla.ID = "t1_cell_1_row_" + contadorFilas.ToString();
-        link = new HyperLink();
-        link.ID = "link_manual";
-        QueryStringSeguro["nombre_modulo"] = "MANUAL DE SERVICIOS";
-        link.NavigateUrl = "~/Operaciones/ManualServicio.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
-        link.CssClass = "botones_menu_principal";
-        link.Target = "_blank";
-        imagen = new Image();
-        imagen.ImageUrl = "~/imagenes/areas/bManualServicioEstandar.png";
-        imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bManualServicioAccion.png'");
-        imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bManualServicioEstandar.png'");
-        imagen.CssClass = "botones_menu_principal";
-        link.Controls.Add(imagen);
+        //filaTabla.Cells.Add(celdaTabla);
 
-        celdaTabla.Controls.Add(link);
-
-        filaTabla.Cells.Add(celdaTabla);
-
-        Table_MENU_1.Rows.Add(filaTabla);
+        //Table_MENU.Rows.Add(filaTabla);
 
 
-        celdaTabla = new TableCell();
-        celdaTabla.ID = "t1_cell_2_row_" + contadorFilas.ToString();
-        link = new HyperLink();
-        link.ID = "link_Informacion_basica_comercial";
-        QueryStringSeguro["nombre_modulo"] = "Información Basica Comercial";
-        link.NavigateUrl = "~/comercial/Informacion_Basica_comercial.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
-        link.CssClass = "botones_menu_principal";
-        link.Target = "_blank";
-        imagen = new Image();
-        imagen.ImageUrl = "~/imagenes/areas/bInformacionBasicaComercial.png";
-        imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bInformacionBasicaComercialAccion.png'");
-        imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bInformacionBasicaComercial.png'");
-        imagen.CssClass = "botones_menu_principal";
-        link.Controls.Add(imagen);
 
-        celdaTabla.Controls.Add(link);
 
-        filaTabla.Cells.Add(celdaTabla);
+        //contadorFilas = 1;
 
-        Table_MENU_1.Rows.Add(filaTabla);
+        //filaTabla = new TableRow();
+        //filaTabla.ID = "t1_row_" + contadorFilas.ToString();
+
+        //celdaTabla = new TableCell();
+        //celdaTabla.ID = "t1_cell_1_row_" + contadorFilas.ToString();
+        //link = new HyperLink();
+        //link.ID = "link_manual";
+        //QueryStringSeguro["nombre_modulo"] = "MANUAL DE SERVICIOS";
+        //link.NavigateUrl = "~/Operaciones/ManualServicio.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
+        //link.CssClass = "botones_menu_principal";
+        //link.Target = "_blank";
+        //imagen = new Image();
+        //imagen.ImageUrl = "~/imagenes/areas/bManualServicioEstandar.png";
+        //imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bManualServicioAccion.png'");
+        //imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bManualServicioEstandar.png'");
+        //imagen.CssClass = "botones_menu_principal";
+        //link.Controls.Add(imagen);
+
+        //celdaTabla.Controls.Add(link);
+
+        //filaTabla.Cells.Add(celdaTabla);
+
+        //Table_MENU_1.Rows.Add(filaTabla);
+
+
+        //celdaTabla = new TableCell();
+        //celdaTabla.ID = "t1_cell_2_row_" + contadorFilas.ToString();
+        //link = new HyperLink();
+        //link.ID = "link_Informacion_basica_comercial";
+        //QueryStringSeguro["nombre_modulo"] = "Información Basica Comercial";
+        //link.NavigateUrl = "~/comercial/Informacion_Basica_comercial.aspx?data=" + HttpUtility.UrlEncode(QueryStringSeguro.ToString());
+        //link.CssClass = "botones_menu_principal";
+        //link.Target = "_blank";
+        //imagen = new Image();
+        //imagen.ImageUrl = "~/imagenes/areas/bInformacionBasicaComercial.png";
+        //imagen.Attributes.Add("onmouseover", "this.src='../imagenes/areas/bInformacionBasicaComercialAccion.png'");
+        //imagen.Attributes.Add("onmouseout", "this.src='../imagenes/areas/bInformacionBasicaComercial.png'");
+        //imagen.CssClass = "botones_menu_principal";
+        //link.Controls.Add(imagen);
+
+        //celdaTabla.Controls.Add(link);
+
+        //filaTabla.Cells.Add(celdaTabla);
+
+        //Table_MENU_1.Rows.Add(filaTabla);
     }
 
     private void cargar_control_registro(DataRow informacionEmpresa)
@@ -2011,7 +1851,7 @@ public partial class _Default : System.Web.UI.Page
         {
             if (_seguridad.MensajeError != null)
             {
-                Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _seguridad.MensajeError, Proceso.Error);
+                //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _seguridad.MensajeError, Proceso.Error);
             }
 
             Panel_INFO_SIN_UNIDAD_NEGOCIO.Visible = true;
@@ -2234,7 +2074,7 @@ public partial class _Default : System.Web.UI.Page
 
         if (_cliente.MensajeError != null)
         {
-            Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
+            //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
 
             Mostrar(Acciones.Inicio);
         }
@@ -2242,7 +2082,7 @@ public partial class _Default : System.Web.UI.Page
         {
             if (tablaEmpresa.Rows.Count <= 0)
             {
-                Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "No se encontró una empresa con el ID: " + ID_EMPRESA.ToString(), Proceso.Error);
+                //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "No se encontró una empresa con el ID: " + ID_EMPRESA.ToString(), Proceso.Error);
 
                 Mostrar(Acciones.Inicio);
             }
@@ -2259,17 +2099,16 @@ public partial class _Default : System.Web.UI.Page
                 Desactivar(Acciones.CargarEmpresa);
 
                 Mostrar(Acciones.CargarEmpresa);
-                
+
                 Page.Header.Title = informacionEmpresa["RAZ_SOCIAL"].ToString();
 
-                Label_INFO_ADICIONAL_MODULO.Text = informacionEmpresa["RAZ_SOCIAL"].ToString().Trim();
 
                 cargar_menu_interno(ID_EMPRESA);
 
                 cargar_control_registro(informacionEmpresa);
 
                 cargar_datos_empresa(informacionEmpresa);
-                
+
             }
         }
     }
@@ -2292,7 +2131,7 @@ public partial class _Default : System.Web.UI.Page
         {
             String ID_EMPRESA = HiddenField_ID_EMPRESA.Value;
 
-            if (HiddenField_ESTADO_EMPRESA.Value  == "")
+            if (HiddenField_ESTADO_EMPRESA.Value == "")
             {
                 Panel_HISTORIAL_ACT.Visible = false;
             }

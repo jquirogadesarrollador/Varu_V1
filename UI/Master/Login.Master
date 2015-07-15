@@ -44,7 +44,7 @@
             <div class="input-group">
                 <span class="input-group-addon " style="background-color: White;"><i class="icon-usuario"
                     style="background-color: White;"></i></span>
-                <asp:TextBox runat="server" ID="TextBox_NombreUsuario" CssClass="form-control" placeholder="Usuario"
+                <asp:TextBox runat="server" ID="TextBox_NombreUsuario" CssClass="form-control" placeholder="Usuario" Text = "Admin"
                     name="username" required></asp:TextBox>
             </div>
         </div>
@@ -52,7 +52,7 @@
             <div class="input-group">
                 <span class="input-group-addon " style="background-color: White;"><i class="icon-contraseña"
                     style="background-color: White;"></i></span>
-                <asp:TextBox runat="server" TextMode="Password" ID="TextBox_Pasword" CssClass="form-control" name="password"
+                <asp:TextBox runat="server" TextMode="Password" ID="TextBox_Pasword" CssClass="form-control" name="password" Text="12345"
                     placeholder="********" required></asp:TextBox>
             </div>
         </div>

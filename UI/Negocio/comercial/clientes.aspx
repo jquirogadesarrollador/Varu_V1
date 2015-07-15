@@ -1,36 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Proceso.Master" AutoEventWireup="true" CodeFile="clientes.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="/UI/Master/Proceso.master" AutoEventWireup="true" CodeFile="clientes.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<%--<link href="../css/Site.css" rel="stylesheet" type="text/css"  />
+--%>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-   
 
-
-    <asp:UpdatePanel ID="UpdatePanel9" runat="server" UpdateMode="Conditional">
-        <ContentTemplate>
-            <asp:Panel ID="Panel_FONDO_MENSAJE" runat="server" Visible="false" Style="background-color: #999999;">
-            </asp:Panel>
-            <asp:Panel ID="Panel_MENSAJES" runat="server">
-                <asp:Image ID="Image_MENSAJE_POPUP" runat="server" Width="50px" Height="50px" Style="margin: 5px auto 8px auto;
-                    display: block;" />
-                <asp:Panel ID="Panel_COLOR_FONDO_POPUP" runat="server" Style="text-align: center">
-                    <asp:Label ID="Label_MENSAJE" runat="server" ForeColor="Red">Este es el mensaje, tiene un  texto de acuerdo a la acción correspondiente.</asp:Label>
-                </asp:Panel>
-                <div style="text-align: center; margin-top: 15px;">
-                    <asp:Button ID="Button_CERRAR_MENSAJE" runat="server" Text="Cerrar" OnClick="Button_CERRAR_MENSAJE_Click"
-                        Style="height: 26px" />
-                </div>
-            </asp:Panel>
-        </ContentTemplate>
-    </asp:UpdatePanel>
-
-    <asp:Panel ID="Panel_INFO_ADICIONAL_MODULO" runat="server">
-        <div class="div_contenedor_formulario">
-            <div id="div_info_adicional_modulo">
-                <asp:Label ID="Label_INFO_ADICIONAL_MODULO" runat="server" Text=""></asp:Label>
-            </div>
-        </div>
-    </asp:Panel>
+    
 
     <asp:Panel ID="Panel_FORM_BOTONES" runat="server">
         <div class="div_espaciador"></div>
@@ -71,19 +48,15 @@
                     </div>
                 </td>
                 <td valign="top">
-                    <asp:UpdatePanel ID="UpdatePanel8" runat="server">
+<%--                    <asp:UpdatePanel ID="UpdatePanel8" runat="server">
                         <ContentTemplate>
+--%>                            
                             <div class="div_cabeza_groupbox">
                                 Sección de busqueda
                             </div>
                             <div class="div_contenido_groupbox">
                                 <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
                                     <tr>
-                                        <td>
-                                            <asp:DropDownList ID="DropDownList_BUSCAR" runat="server" Width="160px" ValidationGroup="BUSCAR_CLIENTE" 
-                                                onselectedindexchanged="DropDownList_BUSCAR_SelectedIndexChanged" CssClass="margin_botones" 
-                                                AutoPostBack="True"></asp:DropDownList>
-                                        </td>
                                         <td>
                                             <asp:TextBox ID="TextBox_BUSCAR" runat="server" Width="220px" ValidationGroup="BUSCAR_CLIENTE" CssClass="margin_botones"></asp:TextBox>
                                         </td>
@@ -96,50 +69,22 @@
                                 </table>
                             </div>
                             <!-- DropDownList_BUSCAR -->
-                            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DropDownList_BUSCAR"
+<%--                            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DropDownList_BUSCAR"
                                     ControlToValidate="DropDownList_BUSCAR"
                                     Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />Debe seleccionar el campo sobre el cual desea realizar la busqueda." 
                                 ValidationGroup="BUSCAR_CLIENTE" />
-                            <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_BUSCAR"
-                                    TargetControlID="RequiredFieldValidator_DropDownList_BUSCAR"
-                                    HighlightCssClass="validatorCalloutHighlight" />
-                            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_TextBox_BUSCAR"
+--%>                            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_TextBox_BUSCAR"
                                     ControlToValidate="TextBox_BUSCAR"
                                     Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />Necesita digitar los datos a buscar." 
                                 ValidationGroup="BUSCAR_CLIENTE" />
-                            <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_TextBox_BUSCAR"
-                                    TargetControlID="RequiredFieldValidator_TextBox_BUSCAR"
-                                    HighlightCssClass="validatorCalloutHighlight" />
-                            <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_TextBox_BUSCAR_Numbers" runat="server" TargetControlID="TextBox_BUSCAR" FilterType="Numbers" />
-                            <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_TextBox_BUSCAR_Letras" runat="server" TargetControlID="TextBox_BUSCAR" FilterType="Custom, LowercaseLetters, UppercaseLetters" ValidChars=" ,.:;-_ñÑáéíóúÁÉÍÓÚ()[]{}" />
-                        </ContentTemplate>
+<%--                        </ContentTemplate>
                         <Triggers>
                             <asp:PostBackTrigger ControlID="Button_BUSCAR"/>
                         </Triggers>
                     </asp:UpdatePanel>
-                </td>
+--%>                </td>
             </tr>
         </table>
-    </asp:Panel>
-
-    <asp:Panel ID="Panel_BOTONES_INTERNOS" runat="server" Width="900px" style="margin:0 auto; text-align:center;">
-        <div class="div_espaciador"></div>
-        <table class="table_control_registros">
-            <tr>
-                <td style="text-align:center;">
-                    <asp:Table ID="Table_MENU" runat="server">
-                    </asp:Table>
-                </td>
-            </tr>
-        </table>
-        <table class="table_control_registros" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                    <td style="text-align:center;">
-                        <asp:Table ID="Table_MENU_1" runat="server">
-                        </asp:Table>
-                    </td>
-                </tr>
-            </table>
     </asp:Panel>
 
     <asp:Panel ID="Panel_RESULTADOS_GRID" runat="server">
@@ -150,9 +95,9 @@
                 Resultados de la busqueda
             </div>
             <div class="div_contenido_groupbox">
-                <asp:UpdatePanel ID="UpdatePanel5" runat="server">
+<%--                <asp:UpdatePanel ID="UpdatePanel5" runat="server">
                     <ContentTemplate>
-                        <div class="div_contenedor_grilla_resultados">
+--%>                        <div class="div_contenedor_grilla_resultados">
                             <div class="grid_seleccionar_registros">
                                 <asp:GridView ID="GridView_RESULTADOS_BUSQUEDA" runat="server" Width="885px" AllowPaging="True"
                                     OnPageIndexChanging="GridView_RESULTADOS_BUSQUEDA_PageIndexChanging" OnSelectedIndexChanged="GridView_RESULTADOS_BUSQUEDA_SelectedIndexChanged"
@@ -188,12 +133,12 @@
                                 </asp:GridView>
                             </div>
                         </div>
-                    </ContentTemplate>
+<%--                    </ContentTemplate>
                     <Triggers>
                         <asp:PostBackTrigger ControlID="GridView_RESULTADOS_BUSQUEDA" />
                     </Triggers>
                 </asp:UpdatePanel>
-            </div>
+--%>            </div>
         </div>
     </asp:Panel>
 
@@ -283,13 +228,6 @@
                             </tr>
                         </table>
                     </asp:Panel>
-                    <ajaxToolkit:CollapsiblePanelExtender ID="CollapsiblePanelExtender_REGISTRO" runat="Server"
-                        TargetControlID="Panel_CONTENIDO_REGISTRO" ExpandControlID="Panel_CABEZA_REGISTRO"
-                        CollapseControlID="Panel_CABEZA_REGISTRO" Collapsed="True" TextLabelID="Label_REGISTRO"
-                        ImageControlID="Image_REGISTRO" ExpandedText="(Ocultar detalles...)" CollapsedText="(Mostrar detalles...)"
-                        ExpandedImage="~/imagenes/plantilla/collapse.jpg" CollapsedImage="~/imagenes/plantilla/expand.jpg"
-                        SuppressPostBack="true">
-                    </ajaxToolkit:CollapsiblePanelExtender>
                 </asp:Panel>
 
 
@@ -300,9 +238,9 @@
                         Código y estado del cliente
                     </div>
                     <div class="div_contenido_groupbox_gris">
-                        <asp:UpdatePanel ID="UpdatePanel7" runat="server">
+<%--                        <asp:UpdatePanel ID="UpdatePanel7" runat="server">
                             <ContentTemplate>
-                                <table class="table_control_registros">
+--%>                                <table class="table_control_registros">
                                     <tr>
                                         <td class="td_izq">
                                             <asp:Label ID="Label_COD_EMPRESA" runat="server" Text="Código de Cliente"></asp:Label>
@@ -324,9 +262,9 @@
                                 <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DropDownList_ACTIVO"
                                     ControlToValidate="DropDownList_ACTIVO" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />El ESTADO de la empresa es requerido."
                                     ValidationGroup="NUEVOCLIENTE" />
-                                <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_ACTIVO"
+<%--                                <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_ACTIVO"
                                     TargetControlID="RequiredFieldValidator_DropDownList_ACTIVO" HighlightCssClass="validatorCalloutHighlight" />
-                                <div class="div_espaciador">
+--%>                                <div class="div_espaciador">
                                 </div>
                                 <asp:Panel ID="Panel_HISTORIAL_ACT" runat="server">
                                     <div class="div_historial_activaciones">
@@ -340,12 +278,12 @@
                                     <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_TextBox_DESCRIPCION_HISTORIAL_ACT"
                                         ControlToValidate="TextBox_DESCRIPCION_HISTORIAL_ACT" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />La DESCRIPCIÓN DEL CAMBIO DE ESTADO de la empresa es requerido."
                                         ValidationGroup="NUEVOCLIENTE" />
-                                    <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_TextBox_DESCRIPCION_HISTORIAL_ACT"
+<%--                                    <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_TextBox_DESCRIPCION_HISTORIAL_ACT"
                                         TargetControlID="RequiredFieldValidator_TextBox_DESCRIPCION_HISTORIAL_ACT" HighlightCssClass="validatorCalloutHighlight" />
-                                </asp:Panel>
-                            </ContentTemplate>
+--%>                                </asp:Panel>
+<%--                            </ContentTemplate>
                         </asp:UpdatePanel>
-                    </div>
+--%>                    </div>
                 </asp:Panel>
 
                 <asp:Panel ID="Panel_INFORMACION_CLIENTE" runat="server">
@@ -366,26 +304,26 @@
                                 <td class="td_der">
                                     <asp:TextBox ID="TextBox_FCH_INGRESO" runat="server" Width="110px" MaxLength="10"
                                         ValidationGroup="NUEVOCLIENTE"></asp:TextBox>
-                                    <ajaxToolkit:CalendarExtender ID="CalendarExtender_TextBox_FCH_INGRESO" runat="server"
+<%--                                    <ajaxToolkit:CalendarExtender ID="CalendarExtender_TextBox_FCH_INGRESO" runat="server"
                                         TargetControlID="TextBox_FCH_INGRESO" Format="dd/MM/yyyy" />
-                                </td>
+--%>                                </td>
                                 <td class="td_izq">
                                     NIT
                                 </td>
                                 <td class="td_der">
                                     <asp:TextBox ID="TextBox_NIT_EMPRESA" runat="server" MaxLength="15" ValidationGroup="NUEVOCLIENTE"
                                         Width="120px"></asp:TextBox>
-                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_NIT_EMPRESA" runat="server"
+<%--                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_NIT_EMPRESA" runat="server"
                                         TargetControlID="TextBox_NIT_EMPRESA" FilterType="Numbers" />
-                                </td>
+--%>                                </td>
                                 <td class="td_izq">
                                     DV
                                 </td>
                                 <td class="td_der">
                                     <asp:TextBox ID="TextBox_DIG_VER" runat="server" Width="50px" MaxLength="1" ValidationGroup="NUEVOCLIENTE"></asp:TextBox>
-                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_DIG_VER" runat="server"
+<%--                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_DIG_VER" runat="server"
                                         TargetControlID="TextBox_DIG_VER" FilterType="Numbers" />
-                                </td>
+--%>                                </td>
                             </tr>
                             <tr>
                                 <td class="td_izq">
@@ -410,37 +348,37 @@
                         <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_FCH_INGRESO"
                             ControlToValidate="TextBox_FCH_INGRESO" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />La FECHA DE INGRESO es requerida."
                             ValidationGroup="NUEVOCLIENTE" />
-                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_FCH_INGRESO"
+<%--                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_FCH_INGRESO"
                             TargetControlID="RequiredFieldValidator_FCH_INGRESO" HighlightCssClass="validatorCalloutHighlight" />
                         <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_TextBox_FCH_INGRESO"
                             runat="server" TargetControlID="TextBox_FCH_INGRESO" FilterType="Custom,Numbers"
                             ValidChars="/">
                         </ajaxToolkit:FilteredTextBoxExtender>
-                        <%-- TextBox_NIT_EMPRESA --%>
+--%>                        <%-- TextBox_NIT_EMPRESA --%>
                         <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_NIT_EMPRESA"
                             ControlToValidate="TextBox_NIT_EMPRESA" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />El NIT DEL CLIENTE es requerido."
                             ValidationGroup="NUEVOCLIENTE" />
-                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_NIT_EMPRESA"
+<%--                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_NIT_EMPRESA"
                             TargetControlID="RequiredFieldValidator_NIT_EMPRESA" HighlightCssClass="validatorCalloutHighlight" />
-                        <%-- TextBox_DIG_VER --%>
+--%>                        <%-- TextBox_DIG_VER --%>
                         <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DIG_VER" ControlToValidate="TextBox_DIG_VER"
                             Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />El DIGITO DE VERIFICACIÓN DEL NIT es requerido."
                             ValidationGroup="NUEVOCLIENTE" />
-                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DIG_VER"
+<%--                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DIG_VER"
                             TargetControlID="RequiredFieldValidator_DIG_VER" HighlightCssClass="validatorCalloutHighlight" />
-                        <%-- TextBox_RAZ_SOCIAL --%>
+--%>                        <%-- TextBox_RAZ_SOCIAL --%>
                         <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_RAZ_SOCIAL"
                             ControlToValidate="TextBox_RAZ_SOCIAL" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />La RAZÓN SOCIAL DEL CLIENTE es requerida."
                             ValidationGroup="NUEVOCLIENTE" />
-                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_RAZ_SOCIAL"
+<%--                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_RAZ_SOCIAL"
                             TargetControlID="RequiredFieldValidator_RAZ_SOCIAL" HighlightCssClass="validatorCalloutHighlight" />
-                        <!-- TextBox_DIR_EMP -->
+--%>                        <!-- TextBox_DIR_EMP -->
                         <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DIR_EMP" ControlToValidate="TextBox_DIR_EMP"
                             Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />La DIRECCIÓN DEL CLIENTE es requerida."
                             ValidationGroup="NUEVOCLIENTE" />
-                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DIR_EMP"
+<%--                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DIR_EMP"
                             TargetControlID="RequiredFieldValidator_DIR_EMP" HighlightCssClass="validatorCalloutHighlight" />
-                    </div>
+--%>                    </div>
                 </asp:Panel>
 
                 <asp:Panel ID="Panel_UBICACION" runat="server">
@@ -453,9 +391,9 @@
                                     Ubicación Principal del Cliente
                                 </div>
                                 <div class="div_contenido_groupbox_gris">
-                                    <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
+<%--                                    <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
                                         <ContentTemplate>
-                                            <table class="table_control_registros">
+--%>                                            <table class="table_control_registros">
                                                 <tr>
                                                     <td class="td_izq">
                                                         <asp:Label ID="Label_REGIONAL" runat="server" Text="Regional"></asp:Label>
@@ -490,11 +428,11 @@
                                             <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_CIUDAD" ControlToValidate="DropDownList_CIUDAD"
                                                 Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />La CIUDAD DEL CLIENTE es requerida."
                                                 ValidationGroup="NUEVOCLIENTE" />
-                                            <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_CIUDAD"
+<%--                                            <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_CIUDAD"
                                                 TargetControlID="RequiredFieldValidator_CIUDAD" HighlightCssClass="validatorCalloutHighlight" />
                                         </ContentTemplate>
                                     </asp:UpdatePanel>
-                                </div>
+--%>                                </div>
                             </td>
                             <td valign="top" style="width: 50%">
                                 <div class="div_cabeza_groupbox_gris">
@@ -525,16 +463,16 @@
                                             <td colspan="5" class="td_der">
                                                 <asp:TextBox ID="TextBox_CEL_EMP" runat="server" Width="260px" ValidationGroup="NUEVOCLIENTE"
                                                     MaxLength="15"></asp:TextBox>
-                                                <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_CEL_EMP" runat="server"
+<%--                                                <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_CEL_EMP" runat="server"
                                                     TargetControlID="TextBox_CEL_EMP" FilterType="Numbers" />
-                                            </td>
+--%>                                            </td>
                                         </tr>
                                     </table>
                                     <!-- TextBox_TEL_EMP -->
                                     <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_TEL_EMP" ControlToValidate="TextBox_TEL_EMP"
                                         Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />El TELEFONO DEL CLIENTE es requerido."
                                         ValidationGroup="NUEVOCLIENTE" />
-                                    <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_TEL_EMP"
+<%--                                    <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_TEL_EMP"
                                         TargetControlID="RequiredFieldValidator_TEL_EMP" HighlightCssClass="validatorCalloutHighlight" />
                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_TextBox_TEL_EMP"
                                         runat="server" TargetControlID="TextBox_TEL_EMP" FilterType="Numbers,Custom"
@@ -542,7 +480,7 @@
                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_TextBox_TEL_EMP_1"
                                         runat="server" TargetControlID="TextBox_TEL_EMP_1" FilterType="Numbers,Custom"
                                         ValidChars="()[]{}- extEXT" />
-                                </div>
+--%>                                </div>
                             </td>
                         </tr>
                     </table>
@@ -557,9 +495,9 @@
                                     Actividad Económica y Riegos
                                 </div>
                                 <div class="div_contenido_groupbox_gris">
-                                    <asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Conditional">
+<%--                                    <asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Conditional">
                                         <ContentTemplate>
-                                            <table class="table_control_registros">
+--%>                                            <table class="table_control_registros">
                                                 <tr>
                                                     <td class="td_izq">
                                                         <asp:Label ID="Label_NOMBRE_SECCION" runat="server" Text="Sección"></asp:Label>
@@ -609,9 +547,9 @@
                                             <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_ACTIVIDAD"
                                                 ControlToValidate="DropDownList_ACTIVIDAD" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />La ACTIVIDAD ECONÓMICA DEL CLIENTE es requerida."
                                                 ValidationGroup="NUEVOCLIENTE" />
-                                            <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_ACTIVIDAD"
+<%--                                            <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_ACTIVIDAD"
                                                 TargetControlID="RequiredFieldValidator_ACTIVIDAD" HighlightCssClass="validatorCalloutHighlight" />
-
+--%>
                                             <div class="div_espaciador"></div>
 
                                             <table class="table_control_registros" width="100%">
@@ -629,18 +567,18 @@
                                                         <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_TextBox_DES_ACTIVIDAD"
                                                             ControlToValidate="TextBox_DES_ACTIVIDAD" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />La DESCRIPCIÓN DE LA ACTIVIDAD ECONÓMICA es requerida."
                                                             ValidationGroup="NUEVOCLIENTE" />
-                                                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_TextBox_DES_ACTIVIDAD"
+<%--                                                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_TextBox_DES_ACTIVIDAD"
                                                             TargetControlID="RequiredFieldValidator_TextBox_DES_ACTIVIDAD" HighlightCssClass="validatorCalloutHighlight" />
-
+--%>
                                                     </td>
                                                     <td valign="top" style="width: 35%;">
                                                         <div class="div_cabeza_groupbox_gris">
                                                             Riesgos de Referencia
                                                         </div>
                                                         <div class="div_contenido_groupbox_gris">
-                                                            <asp:UpdatePanel ID="UpdatePanel10" runat="server">
+<%--                                                            <asp:UpdatePanel ID="UpdatePanel10" runat="server">
                                                                 <ContentTemplate>
-                                                                    <asp:Panel ID="Panel_SELECCIONAR_RIESGO" runat="server">
+--%>                                                                    <asp:Panel ID="Panel_SELECCIONAR_RIESGO" runat="server">
                                                                         <table class="table_control_registros">
                                                                             <tr>
                                                                                 <td class="td_izq">
@@ -680,15 +618,15 @@
                                                                             </asp:GridView>
                                                                         </div>
                                                                     </div>
-                                                                </ContentTemplate>
+<%--                                                                </ContentTemplate>
                                                             </asp:UpdatePanel>
-                                                        </div>
+--%>                                                        </div>
                                                     </td>
                                                 </tr>
                                             </table>
-                                        </ContentTemplate>
+<%--                                        </ContentTemplate>
                                     </asp:UpdatePanel>
-                                </div>
+--%>                                </div>
                             </td>
                         </tr>
                     </table>
@@ -701,9 +639,9 @@
                         Cobertura
                     </div>
                     <div class="div_contenido_groupbox_gris">
-                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+<%--                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
-                                <asp:Panel ID="Panel_COBERTURA_DROPS" runat="server">
+--%>                                <asp:Panel ID="Panel_COBERTURA_DROPS" runat="server">
                                     <table class="table_control_registros">
                                         <tr>
                                             <td class="td_izq">
@@ -768,9 +706,9 @@
                                         </td>
                                     </tr>
                                 </table>
-                            </ContentTemplate>
+<%--                            </ContentTemplate>
                         </asp:UpdatePanel>
-                    </div>
+--%>                    </div>
                 </asp:Panel>
 
                 <asp:Panel ID="Panel_ALIANZA_GRUPO_EMPRESARIAL" runat="server">
@@ -875,9 +813,9 @@
                                 <td class="td_der">
                                     <asp:TextBox ID="TextBox_NUM_EMPLEADOS" runat="server" Width="110px" MaxLength="6"
                                         ValidationGroup="NUEVOCLIENTE"></asp:TextBox>
-                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_NUM_EMPLEADOS" runat="server"
+<%--                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_NUM_EMPLEADOS" runat="server"
                                         TargetControlID="TextBox_NUM_EMPLEADOS" FilterType="Numbers" />
-                                </td>
+--%>                                </td>
                                 <td class="td_der">
                                     <asp:Panel ID="Panel_EMPLEADOS_VIGENTES_EMPRESA" runat="server">
                                         <%--PARA MOSTRAR EL NUMERO DE EMPLEADOS VIGENTES PAR ALA EMPRESA--%>
@@ -897,35 +835,35 @@
                         <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DropDownList_EMP_ESTADO"
                             ControlToValidate="DropDownList_EMP_ESTADO" InitialValue="0" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />EMPRESA DEL ESTADO es requerido."
                             ValidationGroup="NUEVOCLIENTE" />
-                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_EMP_ESTADO"
+<%--                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_EMP_ESTADO"
                             TargetControlID="RequiredFieldValidator_DropDownList_EMP_ESTADO" HighlightCssClass="validatorCalloutHighlight" />
-                        <!-- DropDownList_FAC_NAL -->
+--%>                        <!-- DropDownList_FAC_NAL -->
                         <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DropDownList_FAC_NAL"
                             ControlToValidate="DropDownList_FAC_NAL" InitialValue="0" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />FACTURACIÓN NACIONAL es requerida."
                             ValidationGroup="NUEVOCLIENTE" />
-                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_FAC_NAL"
+<%--                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_FAC_NAL"
                             TargetControlID="RequiredFieldValidator_DropDownList_FAC_NAL" HighlightCssClass="validatorCalloutHighlight" />
-                        <!-- DropDownList_EMP_EXC_IVA -->
+--%>                        <!-- DropDownList_EMP_EXC_IVA -->
                         <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DropDownList_EMP_EXC_IVA"
                             ControlToValidate="DropDownList_EMP_EXC_IVA" InitialValue="0" Display="None"
                             ErrorMessage="<b>Campo Requerido faltante</b><br />EMPRESA EXCLUIDA DEL IVA es requerido."
                             ValidationGroup="NUEVOCLIENTE" />
-                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_EMP_EXC_IVA"
+<%--                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_EMP_EXC_IVA"
                             TargetControlID="RequiredFieldValidator_DropDownList_EMP_EXC_IVA" HighlightCssClass="validatorCalloutHighlight" />
-                        <!-- DropDownList_TIPO_EMPRESA -->
+--%>                        <!-- DropDownList_TIPO_EMPRESA -->
                         <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DropDownList_TIPO_EMPRESA"
                             ControlToValidate="DropDownList_TIPO_EMPRESA" InitialValue="0" Display="None"
                             ErrorMessage="<b>Campo Requerido faltante</b><br />TIPO DE EMPRESA es requerido."
                             ValidationGroup="NUEVOCLIENTE" />
-                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_TIPO_EMPRESA"
+<%--                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_TIPO_EMPRESA"
                             TargetControlID="RequiredFieldValidator_DropDownList_TIPO_EMPRESA" HighlightCssClass="validatorCalloutHighlight" />
-                        <!-- TextBox_NUM_EMPLEADOS -->
+--%>                        <!-- TextBox_NUM_EMPLEADOS -->
                         <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_TextBox_NUM_EMPLEADOS"
                             ControlToValidate="TextBox_NUM_EMPLEADOS" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />El NÚMERO DE EMPLEADOS es requerido."
                             ValidationGroup="NUEVOCLIENTE" />
-                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_TextBox_NUM_EMPLEADOS"
+<%--                        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_TextBox_NUM_EMPLEADOS"
                             TargetControlID="RequiredFieldValidator_TextBox_NUM_EMPLEADOS" HighlightCssClass="validatorCalloutHighlight" />
-                    </div>
+--%>                    </div>
                 </asp:Panel>
 
                 <asp:Panel ID="Panel_NEGOCIO" runat="server">
@@ -939,9 +877,9 @@
                                         Ciudad que Originó el Negocio
                                     </div>
                                     <div class="div_contenido_groupbox_gris">
-                                        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+<%--                                        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                                             <ContentTemplate>
-                                                <table class="table_control_registros">
+--%>                                                <table class="table_control_registros">
                                                     <tr>
                                                         <td class="td_izq">
                                                             Departamento
@@ -972,11 +910,11 @@
                                                 <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DropDownList_CIUDAD_ORIGINO"
                                                     ControlToValidate="DropDownList_CIUDAD_ORIGINO" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />La CIUDAD QUE ORIGINÓ EL NEGOCIO es requerido."
                                                     ValidationGroup="NUEVOCLIENTE" />
-                                                <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_CIUDAD_ORIGINO"
+<%--                                                <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_CIUDAD_ORIGINO"
                                                     TargetControlID="RequiredFieldValidator_DropDownList_CIUDAD_ORIGINO" HighlightCssClass="validatorCalloutHighlight" />
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
-                                    </div>
+--%>                                    </div>
                                 </asp:Panel>
 
                                 <asp:Panel ID="Panel_UNIDAD_NEGOCIO" runat="server">
@@ -1018,9 +956,9 @@
                                         Representante Legal del Cliente
                                     </div>
                                     <div class="div_contenido_groupbox_gris">
-                                        <asp:UpdatePanel ID="UpdatePanel6" runat="server" UpdateMode="Conditional">
+<%--                                        <asp:UpdatePanel ID="UpdatePanel6" runat="server" UpdateMode="Conditional">
                                             <ContentTemplate>
-                                                <div class="div_espaciador"></div>
+--%>                                                <div class="div_espaciador"></div>
                                                 <table class="table_control_registros">
                                                     <tr>
                                                         <td class="td_izq">
@@ -1077,36 +1015,36 @@
                                                 <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_TextBox_NOM_REP_LEGAL"
                                                     ControlToValidate="TextBox_NOM_REP_LEGAL" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />El NOMBRE DEL REP. LEGAL DEL CLIENTE es requerido."
                                                     ValidationGroup="NUEVOCLIENTE" />
-                                                <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_TextBox_NOM_REP_LEGAL"
+<%--                                                <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_TextBox_NOM_REP_LEGAL"
                                                     TargetControlID="RequiredFieldValidator_TextBox_NOM_REP_LEGAL" HighlightCssClass="validatorCalloutHighlight" />
-                                                <!-- DropDownList_TIP_CEDULA_REP_LEGAL_CLIENTE -->
+--%>                                                <!-- DropDownList_TIP_CEDULA_REP_LEGAL_CLIENTE -->
                                                 <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DropDownList_TIP_CEDULA_REP_LEGAL_CLIENTE"
                                                     ControlToValidate="DropDownList_TIP_CEDULA_REP_LEGAL_CLIENTE" Display="None"
                                                     ErrorMessage="<b>Campo Requerido faltante</b><br />El TIPO DE DOCUMENTO es requerido."
                                                     ValidationGroup="NUEVOCLIENTE" />
-                                                <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_TIP_CEDULA_REP_LEGAL_CLIENTE"
+<%--                                                <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_TIP_CEDULA_REP_LEGAL_CLIENTE"
                                                     TargetControlID="RequiredFieldValidator_DropDownList_TIP_CEDULA_REP_LEGAL_CLIENTE"
                                                     HighlightCssClass="validatorCalloutHighlight" />
-                                                <!-- TextBox_CC_REP_LEGAL -->
+--%>                                                <!-- TextBox_CC_REP_LEGAL -->
                                                 <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_TextBox_CC_REP_LEGAL"
                                                     ControlToValidate="TextBox_CC_REP_LEGAL" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />La CEDULA DEL REP. LEGAL DEL CLIENTE es requerida."
                                                     ValidationGroup="NUEVOCLIENTE" />
-                                                <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_TextBox_CC_REP_LEGAL"
+<%--                                                <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_TextBox_CC_REP_LEGAL"
                                                     TargetControlID="RequiredFieldValidator_TextBox_CC_REP_LEGAL" HighlightCssClass="validatorCalloutHighlight" />
-                                                <!-- DropDownList_CIU_CC_REP_LEGAL -->
+--%>                                                <!-- DropDownList_CIU_CC_REP_LEGAL -->
                                                 <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DropDownList_CIU_CC_REP_LEGAL"
                                                     ControlToValidate="DropDownList_CIU_CC_REP_LEGAL" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />La CIUDAD DEL REP. LEGAL DEL CLIENTE es requerida."
                                                     ValidationGroup="NUEVOCLIENTE" />
-                                                <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_CIU_CC_REP_LEGAL"
+<%---                                                <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ValidatorCalloutExtender_DropDownList_CIU_CC_REP_LEGAL"
                                                     TargetControlID="RequiredFieldValidator_DropDownList_CIU_CC_REP_LEGAL" HighlightCssClass="validatorCalloutHighlight" />
                                                 <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_TextBox_NOM_REP_LEGAL"
                                                     runat="server" TargetControlID="TextBox_NOM_REP_LEGAL" FilterType="Custom, LowercaseLetters, UppercaseLetters"
                                                     ValidChars=" ,.:;-_ñÑáéíóúÁÉÍÓÚ()[]{}" />
                                                 <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender_CC_REP_LEGAL" runat="server"
                                                     TargetControlID="TextBox_CC_REP_LEGAL" FilterType="Numbers" />
-                                            </ContentTemplate>
+                                        </ContentTemplate>
                                         </asp:UpdatePanel>
-                                    </div>
+--%>                                    </div>
                                 </asp:Panel>
                             </td>
                         </tr>
@@ -1115,53 +1053,5 @@
             </div>
         </div>
     </asp:Panel>
-
-    <asp:Panel ID="Panel_BOTONES_ACCION_1" runat="server">
-        <div class="div_espaciador"></div>
-        <table class="tabla_contiene_botones" cellpadding="0" cellspacing="0">
-            <tr>
-                <td>
-                    <div class="div_cabeza_groupbox">
-                        Botones de acción
-                    </div>
-                    <div class="div_contenido_groupbox">
-                        <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
-                            <tr>
-                                <td rowspan="0">
-                                    <asp:Button ID="Button_NUEVO_1" runat="server" Text="Nuevo" 
-                                        CssClass="margin_botones" onclick="Button_NUEVO_Click" 
-                                        ValidationGroup="NUEVO_CLIENTE" />
-                                </td>
-                               <td rowspan="0">
-                                    <asp:Button ID="Button_MODIFICAR_1" runat="server" Text="Actualizar"  
-                                        CssClass="margin_botones" onclick="Button_MODIFICAR_Click"/>
-                                </td>
-                                <td rowspan="0">
-                                    <asp:Button ID="Button_GUARDAR_1" runat="server" Text="Guardar"  
-                                        CssClass="margin_botones" onclick="Button_GUARDAR_Click" 
-                                        ValidationGroup="NUEVOCLIENTE"/>
-                                </td>
-                                <td rowspan="0">
-                                    <asp:Button ID="Button_CANCELAR_1" runat="server" Text="Cancelar"  
-                                        CssClass="margin_botones" ValidationGroup="CANCELAR" 
-                                        onclick="Button_CANCELAR_Click"/>
-                                </td>
-                                <td rowspan="0">
-                                    <input class="margin_botones" id="Button_SALIR_1" onclick="window.close();" 
-                                        type="button" value="Salir" />
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </asp:Panel>
-
-
-    
-    
-    
-    
 </asp:Content>
 

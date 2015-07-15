@@ -51,34 +51,29 @@
                         SOFTWARE
                     </div>
                 </div>
-                <li class="liMenP" style="margin-top: 40px;"><a href="#" class="icon-usuario  sliFont sliHover">
-                </a>
+                <li class="liMenP" style="margin-top: 40px;">
+                <a href="#" class="icon-usuario  sliFont sliHover"></a>
                     <ul class="dropdown-menu bckMenu">
-                        <li class="text-center liMen fontRegular">NOMBRE DE USUARIO</li>
-                        <li class="text-center liMen DivName fontRegular">APELLIDO</li>
-                        <li class="liMen fontItalic"><asp:Button ID="btnSubMen1" runat="server" Text="SubMenú 1" CssClass='btnOpcion' /></li>
-                        <li><asp:Button ID="btnSubMen2" runat="server" Text="SubMenú 2" CssClass='btnOpcion aFont fontItalic' /></li>
+                        <li class="text-center liMen fontRegular">Administrador</li>
+                        <li class="liMen fontItalic"><asp:Button ID="btnSubMen1" runat="server" Text="Cambio Contraseña" CssClass='btnOpcion' /></li>
+                        <li><asp:Button ID="btnSubMen2" runat="server" Text="Cerrar Sesión" CssClass='btnOpcion aFont fontItalic' /></li>
                     </ul>
                 </li>
                 <div class="divPrueba">
                 </div>
-                <li class="liMenP liDiv"><a href="FrmForms.aspx" class="icon-mercadeo_h sliFontPro sliHover">
+                <li class="liMenP liDiv">
+                <a href="/UI/Negocio/comercial/Tablero.aspx" class="icon-mercadeo_h sliFontPro sliHover">
                 </a>
                     <ul class="dropdown-menu bckMenu">
-<%--                    <li class="text-center liMen fontRegular">NOMBRE DEL</li>
-                        <li class="text-center liMen DivName fontRegular">PROCESO</li>--%>
-                        <li class="text-center liMen fontRegular">MERCADEO Y</li>
-                        <li class="text-center liMen DivName fontRegular">VENTAS</li>
-
-                        <li class="liMen fontItalic"><asp:Button ID="btnOpc1" runat="server" Text="Opción Numero 1" CssClass='btnOpcion' /></li>
-                        <li><asp:Button ID="btnOpc2" runat="server" Text="Opción Numero 2" CssClass='btnOpcion aFont fontItalic' /></li>
-                        <li><asp:Button ID="btnOpc3" runat="server" Text="Opción Numero 3" CssClass='btnOpcion aFont fontItalic' /></li>
-                        <li><asp:Button ID="btnOpc4" runat="server" Text="Opción Numero 4" CssClass='btnOpcion aFont fontItalic' /></li>
+                        <li class="text-center liMen fontRegular">Mercadeo y Ventas</li>
+                        <li class="liMen fontItalic"><asp:Button PostBackUrl="/UI/Negocio/comercial/clientes.aspx" ID="btnOpc1" runat="server" Text="Clientes" CssClass='btnOpcion'  /></li>
+                        <li><asp:Button ID="btnOpc2" runat="server" Text="Administración" CssClass='btnOpcion aFont fontItalic' /></li>
+                        <li><asp:Button ID="btnOpc3" runat="server" Text="Reportes" CssClass='btnOpcion aFont fontItalic' /></li>
                     </ul>
                 </li>
                 <div class="divPrueba">
                 </div>
-                <li class="liMenP"><a href="MenuPrincipal.aspx" class="icon-menuprincipal sliFont sliHover">
+                <li class="liMenP"><a href="/UI/Principal.aspx" class="icon-menuprincipal sliFont sliHover">
                 </a></li>
                 
             </ul>
