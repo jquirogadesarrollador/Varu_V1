@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <link href="../css/SMaster.css" rel="stylesheet" type="text/css" />
+    <link href="../css/SMaster.css?ver=2" rel="stylesheet" type="text/css" />
     <link href="../css/SForms.css" rel="stylesheet" type="text/css" />
     <link href="../css/SMenuF.css" rel="stylesheet" type="text/css" />
     <link href="../BootStrapV3.3.4/css/bootstrap.css" rel="stylesheet" type="text/css" />
@@ -58,8 +58,12 @@
         <div class="main-content" >
             <div class="swipe-area" style="display: inline-block; vertical-align: middle; float: none;">
             </div>
-            <a href="#" data-toggle=".containerSW" id="sidebar-toggle"><span class="bar"></span>
-                <span class="bar"></span><span class="bar"></span></a>
+            <a href="#" data-toggle=".containerSW" id="sidebar-toggle" class="sbtn icon-mostrarmenu">
+                <%--<span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>--%>
+
+            </a>
             <div class="content">
                 <div>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

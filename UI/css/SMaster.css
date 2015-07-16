@@ -28,7 +28,7 @@
    background-color: white; 
 }
 .containerSW {
-    position: relative;
+    position: absolute;
     height: 100%;
     width: 100%;
     left: 0;
@@ -208,7 +208,7 @@
     font-size: 40px;
     width: 1px;
     text-decoration: none;
-    left: -5px;
+    left: -15px;
 }
 .sbtn::visited
 {
