@@ -36,6 +36,12 @@ select option
     font-size: 15px;
     padding-top: 4px;
 }
+
+.legFormClientes
+{
+    width: 64%;
+}
+
 .DivCont
 {
     margin-left: 1%;
@@ -196,7 +202,7 @@ select option
     padding: 0;
     width: 0px;
     position: absolute;
-    top: 150%;
+    top: 90%;
     left: -1500%;
     background: #ffffff;
 }
@@ -241,4 +247,45 @@ select option
 
 .radioButtonAzulClaro{
     color:#59c2e6;
+}
+
+/* Submenú en cada formulario */
+.textoCentroMenu {
+    color: #59c2e6;
+    font-size: 18px;
+    border-bottom: 0.0625em solid rgb(60,78,100);
+    width: 100%;
+}
+
+.textoContenidoMenu {
+    color: white;
+    font-size: 12px;
+}
+
+.textoContenidoMenu:hover {
+    color: #59c2e6;
+    font-size: 12px;
+}
+
+.estiloListaMenu {
+    background-color: #2b2e35;
+}
+
+.colorOrigenSubmenu{
+    color: #555
+}
+
+.colorOrigenSubmenu:hover{
+    color: white
+}
+
+.divflotanteizquierdarelativo{
+    position: relative;
+    width:70%;
+    float:left;
+}
+
+.divflotanteizquierdarelativo2{
+    position: relative;
+    float:left;
 }
