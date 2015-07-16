@@ -14,7 +14,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server"
     ClientIDMode="Static">
     <%--Titulo del formulario--%>
-    <div style="width:100%">
+    <div style="width:100%" >
     <div class="divflotanteizquierdarelativo">
         <div class="DId" style="border-bottom: 1px solid #003366;">
             <h3 class="text-left fontRegular">
