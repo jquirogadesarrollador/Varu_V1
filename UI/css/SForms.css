@@ -1,4 +1,6 @@
-﻿.placeholder
+﻿table tr td {padding: 2px;}
+
+.placeholder
 {
     color: grey;
 }
@@ -23,7 +25,8 @@ select option
 }
 .fontBold
 {
-    font-family: Open Sans, Bold;
+    font-family: Open Sans;
+    font-weight:bold;
 }
 
 .legForm
