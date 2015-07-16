@@ -253,7 +253,7 @@ public partial class _Default : System.Web.UI.Page
                 GridView_RIESGOS_CONFIGURADOS.Columns[0].Visible = false;
                 GridView_COVERTURA.Columns[0].Visible = false;
 
-                Panel_EMPLEADOS_VIGENTES_EMPRESA.Visible = false;
+                //Panel_EMPLEADOS_VIGENTES_EMPRESA.Visible = false;
 
                 break;
             case Acciones.ModificarEmpresa:
@@ -299,7 +299,7 @@ public partial class _Default : System.Web.UI.Page
                 Panel_CONTROL_REGISTRO.Visible = true;
                 Panel_COD_EMPRESA.Visible = true;
 
-                Panel_EMPLEADOS_VIGENTES_EMPRESA.Visible = true;
+                //Panel_EMPLEADOS_VIGENTES_EMPRESA.Visible = true;
 
                 Panel_UNIDAD_NEGOCIO.Visible = true;
                 Panel_INFO_SIN_UNIDAD_NEGOCIO.Visible = true;
@@ -547,7 +547,7 @@ public partial class _Default : System.Web.UI.Page
                 Session.Add("dt_GRID_COVERTURA", new DataTable());
                 break;
             case Acciones.NuevaEmpresa:
-                this.Title = "NUEVO CLIENTE";
+                this.Title = "Clientes";
 
                 HiddenField_ID_EMPRESA.Value = "";
                 HiddenField_ESTADO_EMPRESA.Value = "";
@@ -568,9 +568,9 @@ public partial class _Default : System.Web.UI.Page
     {
         this.Title = "Clientes";
 
-        Ocultar(Acciones.Inicio);
+        //Ocultar(Acciones.Inicio);
         Desactivar(Acciones.Inicio);
-        Mostrar(Acciones.Inicio);
+        //Mostrar(Acciones.Inicio);
         Cargar(Acciones.Inicio);
     }
 
