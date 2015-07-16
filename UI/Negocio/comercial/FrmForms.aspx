@@ -22,28 +22,6 @@
             );
     </script>
 
-    <style type="text/css">
-        .textoCentroMenu {
-            color: #59c2e6;
-            font-size: 18px;
-            border-bottom: 0.0625em solid rgb(60,78,100);
-            width: 100%;
-        }
-
-        .textoContenidoMenu {
-            color: white;
-            font-size: 12px;
-        }
-
-            .textoContenidoMenu:hover {
-                color: #59c2e6;
-                font-size: 12px;
-            }
-
-        .estiloListaMenu {
-            background-color: #2b2e35;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"
     ClientIDMode="Static">
