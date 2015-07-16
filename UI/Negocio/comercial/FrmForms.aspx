@@ -63,7 +63,7 @@
                                 <td>INFORMACIÓN BÁSICA</td>
                                 <td>
                                     <ul class="menu">
-                                        <li><span class="glyphicon glyphicon-asterisk"></span>
+                                        <li><span class="colorOrigenSubmenu icon-formulariomenu"></span>
 
                                             <ul>
 
