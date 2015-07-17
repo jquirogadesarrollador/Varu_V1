@@ -231,6 +231,9 @@ public partial class _Default : System.Web.UI.Page
                 Button_GUARDAR.Visible = false;
                 Button_CANCELAR.Visible = false;
 
+                libtnNuevo.Visible = false;
+                libtnModificar.Visible = false;
+
 
                 Panel_RESULTADOS_GRID.Visible = false;
 
@@ -294,6 +297,9 @@ public partial class _Default : System.Web.UI.Page
 
                 Button_NUEVO.Visible = true;
                 Button_MODIFICAR.Visible = true;
+                libtnNuevo.Visible = true;
+                libtnModificar.Visible = true;
+
 
                 Panel_FORMULARIO.Visible = true;
                 Panel_CONTROL_REGISTRO.Visible = true;
@@ -651,6 +657,9 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["idEmpresa"] == null)
+            Response.Redirect("~/Index.aspx");
+
         if (IsPostBack == false)
         {
             Iniciar();
@@ -1008,42 +1017,43 @@ public partial class _Default : System.Web.UI.Page
 
     private void Buscar()
     {
-        String datosCapturados = TextBox_BUSCAR.Text.ToUpper();
 
-        cliente _cliente = new cliente(Session["idEmpresa"].ToString(), Session["USU_LOG"].ToString());
+        //cliente _cliente = new cliente(Session["idEmpresa"].ToString(), Session["USU_LOG"].ToString());
 
-        DataTable tablaResultadosBusqueda = new DataTable();
+        //DataTable tablaResultadosBusqueda = new DataTable();
 
-        if (tablaResultadosBusqueda.Rows.Count <= 0)
-        {
-            if (_cliente.MensajeError != null)
-            {
-                //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
-            }
-            else
-            {
-                //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "No se encontraron registros que cumplieran los datos de busqueda.", Proceso.Advertencia);
-            }
 
-            Ocultar(Acciones.Inicio);
-            Mostrar(Acciones.Inicio);
+        //tablaResultadosBusqueda = _cliente.Buscar(TextBox_BUSCAR.Text);
 
-        }
-        else
-        {
-            GridView_RESULTADOS_BUSQUEDA.DataSource = tablaResultadosBusqueda;
-            GridView_RESULTADOS_BUSQUEDA.DataBind();
 
-            Ocultar(Acciones.Inicio);
-            Mostrar(Acciones.BusquedaEncontrada);
-        }
+        //if (tablaResultadosBusqueda.Rows.Count <= 0)
+        //{
+        //    if (_cliente.MensajeError != null)
+        //    {
+        //        //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
+        //    }
+        //    else
+        //    {
+        //        //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "No se encontraron registros que cumplieran los datos de busqueda.", Proceso.Advertencia);
+        //    }
 
-        this.Title = "BUSQUEDA Y CREACIÓON DE CLIENTES";
+        //    Ocultar(Acciones.Inicio);
+        //    Mostrar(Acciones.Inicio);
+
+        //}
+        //else
+        //{
+        //    GridView_RESULTADOS_BUSQUEDA.DataSource = tablaResultadosBusqueda;
+        //    GridView_RESULTADOS_BUSQUEDA.DataBind();
+
+        //    Ocultar(Acciones.Inicio);
+        //    Mostrar(Acciones.BusquedaEncontrada);
+        //}
     }
 
     protected void Button_BUSCAR_Click(object sender, EventArgs e)
     {
-        Buscar();
+        if (!string.IsNullOrEmpty(TextBox_BUSCAR.Text)) Buscar();
     }
 
     protected void GridView_RESULTADOS_BUSQUEDA_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -2399,16 +2409,19 @@ public partial class _Default : System.Web.UI.Page
     protected void GridView_COVERTURA_SelectedIndexChanged(object sender, EventArgs e)
     {
         DataTable tabla_temp = ((DataTable)Session["dt_GRID_COVERTURA"]);
+        if (tabla_temp != null && tabla_temp.Rows.Count > 0)
+        {
 
-        tabla_temp.Rows[GridView_COVERTURA.SelectedIndex].Delete();
+            tabla_temp.Rows[GridView_COVERTURA.SelectedIndex].Delete();
 
-        GridView_COVERTURA.DataSource = tabla_temp;
+            GridView_COVERTURA.DataSource = tabla_temp;
 
-        GridView_COVERTURA.SelectedIndex = -1;
+            GridView_COVERTURA.SelectedIndex = -1;
 
-        GridView_COVERTURA.DataBind();
+            GridView_COVERTURA.DataBind();
 
-        Session["dt_GRID_COVERTURA"] = tabla_temp;
+            Session["dt_GRID_COVERTURA"] = tabla_temp;
+        }
     }
 
     protected void DropDownList_DEPARTAMENTO_ORIGINO_SelectedIndexChanged(object sender, EventArgs e)

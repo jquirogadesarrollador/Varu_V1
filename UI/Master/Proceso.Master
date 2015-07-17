@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <link href="../css/SMaster.css?ver=2" rel="stylesheet" type="text/css" />
-    <link href="../css/SForms.css" rel="stylesheet" type="text/css" />
+    <link href="../css/SForms.css?ver=4" rel="stylesheet" type="text/css" />
     <link href="../css/SMenuF.css" rel="stylesheet" type="text/css" />
     <link href="../BootStrapV3.3.4/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="../css/SCharts.css" rel="stylesheet" type="text/css" />
@@ -22,6 +22,15 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .contentScrollOculta
+        {
+            overflow-y:scroll;
+        }
+        .contentScrollOculta::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <%--<form id="form1" runat="server">--%>
@@ -78,12 +87,14 @@
     </form>
     <script type="text/javascript">
         if (document.getElementById('divPrincipal')) {
-            
+
             document.getElementById('divPrincipal').style.height = (document.getElementById('containerSW').clientHeight - 50) + 'px'
-            document.getElementById('divPrincipal').style.overflowY='scroll'
-            
-        } 
+            //document.getElementById('divPrincipal').style.overflowY = 'scroll'
+
+            document.getElementById('divPrincipal').className = 'contentScrollOculta';
+        }
 
     </script>
+
 </body>
 </html>
