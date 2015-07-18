@@ -2,19 +2,77 @@
     CodeFile="clientes.aspx.cs" Inherits="_Default" MaintainScrollPositionOnPostback="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script src="../../Scripts/jquery-1.11.3.js" type="text/javascript"></script>
+    <%--<script src="../../Scripts/jquery-1.11.3.js" type="text/javascript"></script>--%>
+    <link href="../../BootStrapV3.3.4/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <script src="../../BootStrapV3.3.4/js/bootstrap.js" type="text/javascript"></script>
     <link href="../../BootStrapV3.3.4/css/bootstrapValidator.css" rel="stylesheet" type="text/css" />
     <script src="../../BootStrapV3.3.4/js/bootstrapValidator.js" type="text/javascript"></script>
-    <script src="../../Scripts/validatorForm.js" type="text/javascript"></script>
     <script src="../../BootStrapV3.3.4/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
     <link href="../../css/SLogin.css" rel="stylesheet" type="text/css" />
+    <script src="../../Scripts/validatorClientes.js?ver=1" type="text/javascript"></script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server"
     ClientIDMode="Static">
     <%--Titulo del formulario--%>
+
+
     <div id="divPrincipal" style="width: 100%">
+        <asp:Panel ID="panelMensajeError" Width="80%" runat="server" Visible="false">
+            <div id="divError" style="width: 87%; height: 80px; margin-left: 1%; background-color: rgb(187,0,31)" class="tipoLetraNegritaCursiva letrasBlancas">
+                <br />
+                <center>
+                    <table width="80%">
+                        <tr>
+                            <td align="right"><span class="icon-error" style="font-size: 23px"></span></td>
+                            <td align="left" style="font-size: 23px">¡Error!</td>
+                            <td align="center">
+                                <asp:Label Text="Este es un mensaje de error" ForeColor="White" ID="lblMensajeError" runat="server" /></td>
+                        </tr>
+                    </table>
+                </center>
+
+
+            </div>
+        </asp:Panel>
+
+        <asp:Panel ID="panelMensajeAdvertencia" Width="80%" runat="server" Visible="false">
+            <div id="divAdvertencia" style="width: 87%; height: 80px; margin-left: 1%; background-color: rgb(255,206,85)" class="tipoLetraNegritaCursiva letrasBlancas">
+                <br />
+
+                <center>
+                    <table width="80%">
+                        <tr>
+                            <td align="right"><span class="icon-advertencia" style="font-size: 23px"></span></td>
+                            <td align="left" style="font-size: 23px">¡Cuidado!</td>
+                            <td align="center">
+                                <asp:Label Text="Este es un mensaje de error" ForeColor="White" ID="lblMensajeAdvertencia" runat="server" /></td>
+                        </tr>
+                    </table>
+                </center>
+
+
+            </div>
+        </asp:Panel>
+
+        <asp:Panel ID="panelMensajeCorrecto" Width="80%" runat="server" Visible="false">
+            <div id="divCorrecto" style="width: 87%; height: 80px; margin-left: 1%; background-color: rgb(160,212,104)" class="tipoLetraNegritaCursiva letrasBlancas">
+                <br />
+
+                <center>
+                    <table width="80%">
+                        <tr>
+                            <td align="right"><span class="icon-ok" style="font-size: 23px"></span></td>
+                            <td align="left" style="font-size: 23px">¡Correcto!</td>
+                            <td align="center">
+                                <asp:Label Text="Este es un mensaje de error" ForeColor="White" ID="lblMensajeCorrecto" runat="server" /></td>
+                        </tr>
+                    </table>
+                </center>
+
+
+            </div>
+        </asp:Panel>
         <div class="divflotanteizquierdarelativo">
             <div class="DId" style="border-bottom: 1px solid #003366;">
                 <h3 class="text-left fontRegular">MERCADEO Y VENTAS</h3>
@@ -26,19 +84,19 @@
                         <li><a class="search" href="#"><span>
                             <asp:TextBox ID="TextBox_BUSCAR" CssClass="icon-large icon-search btnSearch input-md fontRegular"
                                 runat="server" placeholder="Nit, Razón social"></asp:TextBox>
-                            <asp:Button ID="Button_BUSCAR" runat="server" OnClick="Button_BUSCAR_Click" Style="display: none" />
+                            <asp:Button ID="Button_BUSCAR" runat="server" OnClick="Button_BUSCAR_Click" ValidationGroup="validatorBuscar" Style="display: none" />
                         </span></a></li>
                         <li id="libtnNuevo" runat="server">
-                            <asp:Button ID="Button_NUEVO" runat="server" CssClass='BtnNew' OnClick="Button_NUEVO_Click" /></li>
+                            <asp:Button ID="Button_NUEVO" runat="server" CssClass='BtnNew' OnClientClick="ActivarValidaciones();" OnClick="Button_NUEVO_Click" ValidationGroup="validatorNuevo" /></li>
                         <li id="libtnModificar" runat="server">
-                            <asp:Button ID="Button_MODIFICAR" runat="server" CssClass='BtnEdit' OnClick="Button_MODIFICAR_Click" /></li>
+                            <asp:Button ID="Button_MODIFICAR" runat="server" CssClass='BtnEdit' OnClick="Button_MODIFICAR_Click" ValidationGroup="validatorEditar" /></li>
                         <li id="libtnGuardar" runat="server">
-                            <asp:Button ID="Button_GUARDAR" runat="server" CssClass='BtnSave' OnClick="Button_GUARDAR_Click" />
+                            <asp:Button ID="Button_GUARDAR" runat="server" CssClass='BtnSave' OnClick="Button_GUARDAR_Click" ValidationGroup="validatorGuardar" />
                         </li>
                         <li id="libtnPrint" runat="server">
                             <asp:Button ID="btnPrint" runat="server" CssClass='BtnPrint' /></li>
                         <li id="libtnCancelar" runat="server">
-                            <asp:Button ID="Button_CANCELAR" runat="server" CssClass='BtnPrint' OnClick="Button_CANCELAR_Click" /></li>
+                            <asp:Button ID="Button_CANCELAR" runat="server" ValidationGroup="validatorImprimir" CssClass='BtnPrint' OnClick="Button_CANCELAR_Click" /></li>
                     </ul>
                 </div>
             </asp:Panel>
@@ -149,8 +207,10 @@
                                         <td class="espacioColumnaIzquierda tipoLetraNegrita">Informacion de registro
                                         </td>
                                         <td>
-                                            <asp:TextBox ID="TextBox_FCH_CRE" runat="server" Enabled="False" ReadOnly="True"
-                                                CssClass="form-control input-md" placeholder="Fecha registro"></asp:TextBox>
+                                           
+                                                    <asp:TextBox ID="TextBox_FCH_CRE" runat="server" Enabled="False" ReadOnly="True"
+                                                        CssClass="form-control input-md" placeholder="Fecha registro" required></asp:TextBox>
+                                         
                                         </td>
                                         <td>
                                             <asp:TextBox ID="TextBox_HOR_CRE" runat="server" Enabled="False" ReadOnly="True"
@@ -199,9 +259,11 @@
                                                 placeholder="Código del cliente" ValidationGroup="COD_CLIENTE"></asp:TextBox>
                                         </td>
                                         <td colspan="3" class="espacioColumnaDerecha">
-                                            <asp:DropDownList ID="DropDownList_ACTIVO" runat="server" AutoPostBack="True" CssClass="form-control placeholder"
-                                                OnSelectedIndexChanged="DropDownList_ACTIVO_SelectedIndexChanged" ValidationGroup="NUEVOCLIENTE">
-                                            </asp:DropDownList>
+                                       
+                                                    <asp:DropDownList ID="DropDownList_ACTIVO" runat="server" AutoPostBack="True" CssClass="form-control placeholder"
+                                                        OnSelectedIndexChanged="DropDownList_ACTIVO_SelectedIndexChanged">
+                                                    </asp:DropDownList>
+                                               
                                         </td>
                                     </tr>
                                     <tr>
@@ -212,9 +274,9 @@
 
                                     </tr>
                                 </table>
-                                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DropDownList_ACTIVO"
+                                <%--      <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_DropDownList_ACTIVO"
                                     ControlToValidate="DropDownList_ACTIVO" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />El ESTADO de la empresa es requerido."
-                                    ValidationGroup="NUEVOCLIENTE" />
+                                    ValidationGroup="NUEVOCLIENTE" />--%>
                             </asp:Panel>
                         </asp:Panel>
                         <asp:Panel ID="Panel_COD_EMPRESA" runat="server">
@@ -225,15 +287,17 @@
                                         Por qué?
                                 <asp:Label ID="Label_TIPO_DE_ACTIVACION" runat="server" Font-Bold="True" ForeColor="#000066"></asp:Label>
                                         <br />
-                                        <asp:TextBox ID="TextBox_DESCRIPCION_HISTORIAL_ACT" runat="server" TextMode="MultiLine"
-                                            Height="50px" MaxLength="250" Width="760px" ValidationGroup="NUEVOCLIENTE" placeholder="Describa brevemente la causa del cambio de estado"></asp:TextBox>
+                                       
+                                                <asp:TextBox ID="TextBox_DESCRIPCION_HISTORIAL_ACT" runat="server" TextMode="MultiLine"
+                                                    Height="50px" MaxLength="250" Width="760px" placeholder="Describa brevemente la causa del cambio de estado"></asp:TextBox>
+                                          
                                     </div>
                                     <div class="dvLinea">
                                     </div>
                                     <!-- TextBox_DESCRIPCION_HISTORIAL_ACT -->
-                                    <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_TextBox_DESCRIPCION_HISTORIAL_ACT"
+                                    <%--<asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_TextBox_DESCRIPCION_HISTORIAL_ACT"
                                         ControlToValidate="TextBox_DESCRIPCION_HISTORIAL_ACT" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />La DESCRIPCIÓN DEL CAMBIO DE ESTADO de la empresa es requerido."
-                                        ValidationGroup="NUEVOCLIENTE" />
+                                        ValidationGroup="NUEVOCLIENTE" />--%>
                                 </asp:Panel>
                             </center>
                         </asp:Panel>
@@ -258,8 +322,10 @@
                                 <td class="espacioColumnaIzquierda tipoLetraNegrita">Fecha de Ingreso
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="TextBox_FCH_INGRESO" class="form-control input-md" onfocus="(this.type='date')"
-                                        CssClass="form-control input-md" runat="server" MaxLength="10" placeholder="Fecha de Ingreso"></asp:TextBox>
+                                 
+                                            <asp:TextBox ID="TextBox_FCH_INGRESO" class="form-control input-md" onfocus="(this.type='date')"
+                                                CssClass="form-control input-md" runat="server" MaxLength="10" placeholder="Fecha de Ingreso"></asp:TextBox>
+                                    
                                 </td>
                                 <td class="tipoLetraNegrita">Nit
                                 </td>
@@ -426,9 +492,9 @@
                             </tr>
                         </table>
                         <%-- TextBox_FCH_INGRESO --%>
-                        <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_FCH_INGRESO"
+                        <%--      <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_FCH_INGRESO"
                             ControlToValidate="TextBox_FCH_INGRESO" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />La FECHA DE INGRESO es requerida."
-                            ValidationGroup="NUEVOCLIENTE" />
+                            ValidationGroup="NUEVOCLIENTE" />--%>
                         <%-- TextBox_NIT_EMPRESA --%>
                         <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator_NIT_EMPRESA"
                             ControlToValidate="TextBox_NIT_EMPRESA" Display="None" ErrorMessage="<b>Campo Requerido faltante</b><br />El NIT DEL CLIENTE es requerido."
@@ -878,4 +944,46 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        //AgregarValidacionesCorrespondientes();
+        function AcomodarBarraBotones(reiniciar, esResize) {
+            var contenedorPrincipal;
+            if (!reiniciar) {
+
+
+                if (document.getElementById('divPrincipal')) {
+                    contenedorPrincipal = document.getElementById('divPrincipal')
+                }
+
+                if (screen.availWidth == window.outerWidth && screen.availHeight == window.outerHeight && esResize == true) {
+                    if (document.getElementById('main'))
+                        document.getElementById('main').style.left = '70%'
+                } else {
+                    var inicial = contenedorPrincipal.clientWidth
+                    inicial = (inicial * 22) / 100;
+                    if (document.getElementById('main'))
+                        document.getElementById('main').style.left = (contenedorPrincipal.clientWidth - inicial) + 'px'
+                }
+
+            } else {
+                if (document.getElementById('main'))
+                    document.getElementById('main').style.left = '70%'
+
+
+
+            }
+
+
+
+
+        }
+
+        function ActivarValidaciones() {
+            $('#formularioProceso').bootstrapValidator('enableFieldValidators', 'ctl00$ContentPlaceHolder1$DropDownList_ACTIVO', false, 'notEmpty')
+            $('#formularioProceso').bootstrapValidator('enableFieldValidators', 'ctl00$ContentPlaceHolder1$TextBox_DESCRIPCION_HISTORIAL_ACT', false, 'notEmpty')
+            $('#formularioProceso').bootstrapValidator('enableFieldValidators', 'ctl00$ContentPlaceHolder1$TextBox_FCH_INGRESO', false, 'notEmpty')
+            
+        }
+
+    </script>
 </asp:Content>

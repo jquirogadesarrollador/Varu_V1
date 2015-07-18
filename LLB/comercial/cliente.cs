@@ -432,7 +432,7 @@ namespace Brainsbits.LLB.comercial
 
             return ID_EMPRESA;
         }
-        
+
         public Decimal Adicionar(String ACTIVO, System.DateTime FCH_INGRESO, String NIT_EMPRESA, String ACT_ECO,
             String RAZ_SOCIAL, String DIR_EMP, String CIU_EMP, String TEL_EMP, String CUB_CIUDADES, String NOM_REP_LEGAL, String CC_REP_LEGAL,
             String TIPO_EMPRESA, String CIU_ORG_NEG, Int32 NUM_EMPLEADOS, String USU_CRE, String FAC_NAL,
@@ -523,7 +523,7 @@ namespace Brainsbits.LLB.comercial
             Boolean verificador = true;
             try
             {
-                realizarVersionamientoManual = _manual.EmpresaConManualDeServicioCreado(ID_EMPRESA, conexion); 
+                realizarVersionamientoManual = _manual.EmpresaConManualDeServicioCreado(ID_EMPRESA, conexion);
 
                 DataTable tablaDatosAnteriores = _manual.ObtenerInfoRegistroTabla(diccionarioCamposVenEmpresas, "VEN_EMPRESAS", "ID_EMPRESA", ID_EMPRESA.ToString(), conexion);
 
@@ -1124,7 +1124,7 @@ namespace Brainsbits.LLB.comercial
             Boolean verificador = true;
             try
             {
-                realizarVersionamientoManual = _manual.EmpresaConManualDeServicioCreado(ID_EMPRESA, conexion); 
+                realizarVersionamientoManual = _manual.EmpresaConManualDeServicioCreado(ID_EMPRESA, conexion);
 
                 DataTable tablaDatosAnteriores = _manual.ObtenerInfoRegistroTabla(diccionarioCamposVenEmpresas, "VEN_EMPRESAS", "ID_EMPRESA", ID_EMPRESA.ToString(), conexion);
 
@@ -2056,6 +2056,52 @@ namespace Brainsbits.LLB.comercial
                 MensajeError = "El campoRAZ_SOCIAL no puede ser vacio. \n";
             }
             return _dataTable;
+        }
+
+        public DataTable Buscar(string dato)
+        {
+            Conexion conexion = new Conexion(Empresa);
+            DataSet _dataSet = new DataSet();
+            DataView _dataView = new DataView();
+            DataTable _dataTable = new DataTable();
+            String sql = null;
+            String informacion = null;
+
+            sql = "usp_comercial_clientes_buscar ";
+
+            if (!(String.IsNullOrEmpty(dato)))
+            {
+                sql += "'" + dato + "', ";
+                informacion += "dato = '" + dato.ToString() + "', ";
+
+                sql += "'" + Usuario + "'";
+                informacion += "USU_LOG = '" + Usuario + "'";
+                try
+                {
+                    _dataSet = conexion.ExecuteReader(sql);
+                    _dataView = _dataSet.Tables[0].DefaultView;
+                    _dataTable = _dataView.Table;
+
+                    #region auditoria
+                    auditoria _auditoria = new auditoria(Empresa);
+                    _auditoria.Adicionar(Usuario, tabla.VEN_EMPRESAS, tabla.ACCION_CONSULTAR.ToString(), sql, informacion, conexion);
+                    #endregion auditoria
+                }
+                catch (Exception e)
+                {
+                    MensajeError = e.Message;
+                }
+                finally
+                {
+                    conexion.Desconectar();
+                }
+            }
+            else
+            {
+                MensajeError = "El campo dato no puede ser vacio. \n";
+            }
+            return _dataTable;
+
         }
 
         public DataTable ObtenerEmpresaConRazSocialSoloComercial(String RAZ_SOCIAL)

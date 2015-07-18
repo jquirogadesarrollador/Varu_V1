@@ -580,42 +580,37 @@ public partial class _Default : System.Web.UI.Page
         Cargar(Acciones.Inicio);
     }
 
-    private void Informar(Panel panel_fondo, System.Web.UI.WebControls.Image imagen_mensaje, Panel panel_mensaje, Label label_mensaje, String mensaje, Proceso proceso)
+    private void Informar(Panel panel_mensaje, Label label_mensaje, String mensaje, Proceso proceso)
     {
-        panel_fondo.Style.Add("display", "block");
-        panel_mensaje.Style.Add("display", "block");
+        //panel_fondo.Style.Add("display", "block");
+        //panel_mensaje.Style.Add("display", "block");
 
-        label_mensaje.Font.Bold = true;
+        //label_mensaje.Font.Bold = true;
 
-        switch (proceso)
-        {
-            case Proceso.Correcto:
-                label_mensaje.ForeColor = System.Drawing.Color.Green;
-                imagen_mensaje.ImageUrl = "~/imagenes/plantilla/ok_popup.png";
-                break;
-            case Proceso.Error:
-                label_mensaje.ForeColor = System.Drawing.Color.Red;
-                imagen_mensaje.ImageUrl = "~/imagenes/plantilla/error_popup.png";
-                break;
-            case Proceso.Advertencia:
-                label_mensaje.ForeColor = System.Drawing.Color.Orange;
-                imagen_mensaje.ImageUrl = "~/imagenes/plantilla/advertencia_popup.png";
-                break;
-        }
+        //switch (proceso)
+        //{
+        //    case Proceso.Correcto:
+        //        label_mensaje.ForeColor = System.Drawing.Color.Green;
+        //        imagen_mensaje.ImageUrl = "~/imagenes/plantilla/ok_popup.png";
+        //        break;
+        //    case Proceso.Error:
+        //        label_mensaje.ForeColor = System.Drawing.Color.Red;
+        //        imagen_mensaje.ImageUrl = "~/imagenes/plantilla/error_popup.png";
+        //        break;
+        //    case Proceso.Advertencia:
+        //        label_mensaje.ForeColor = System.Drawing.Color.Orange;
+        //        imagen_mensaje.ImageUrl = "~/imagenes/plantilla/advertencia_popup.png";
+        //        break;
+        //}
 
-        panel_fondo.Visible = true;
+
         panel_mensaje.Visible = true;
-
-
         label_mensaje.Text = mensaje;
+
     }
 
-    private void ocultar_mensaje(Panel panel_fondo, Panel panel_mensaje)
+    private void ocultar_mensaje(Panel panel_mensaje)
     {
-        panel_fondo.Style.Add("display", "none");
-        panel_mensaje.Style.Add("display", "none");
-
-        panel_fondo.Visible = false;
         panel_mensaje.Visible = false;
     }
 
@@ -816,13 +811,13 @@ public partial class _Default : System.Web.UI.Page
 
         if (ID_EMPRESA == 0)
         {
-            //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
+            Informar(panelMensajeError, lblMensajeError, _cliente.MensajeError, Proceso.Error);
         }
         else
         {
             Cargar(ID_EMPRESA);
 
-            //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "El cliente " + RAZ_SOCIAL + " fue creado correctamente y se le asignó el ID " + ID_EMPRESA.ToString(), Proceso.Correcto);
+            Informar(panelMensajeCorrecto, lblMensajeCorrecto, string.Format("El cliente {0} fue creado correctamente y se le asignó el ID {1}", RAZ_SOCIAL, ID_EMPRESA.ToString()), Proceso.Correcto);
         }
     }
 
@@ -974,11 +969,11 @@ public partial class _Default : System.Web.UI.Page
             //_maestrasInterfaz.CargarEnBdElManualServicioActual(ID_EMPRESA);
 
             Cargar(ID_EMPRESA);
-            //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "El cliente " + RAZ_SOCIAL + " fue actualizado correctamente", Proceso.Correcto);
+            Informar(panelMensajeCorrecto, lblMensajeCorrecto, string.Format("El cliente {0} fue actualizado correctamente", RAZ_SOCIAL), Proceso.Correcto);
         }
         else
         {
-            //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
+            Informar(panelMensajeError, lblMensajeError, _cliente.MensajeError, Proceso.Error);
         }
     }
 
@@ -986,13 +981,13 @@ public partial class _Default : System.Web.UI.Page
     {
         if (GridView_COVERTURA.Rows.Count <= 0)
         {
-            //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "Para poder continuar debe especificar por lo menos una ciudad en la sección de COBERTURA DEL CLIENTE.", Proceso.Advertencia);
+            Informar(panelMensajeAdvertencia, lblMensajeAdvertencia, "Para poder continuar debe especificar por lo menos una ciudad en la sección de COBERTURA DEL CLIENTE.", Proceso.Advertencia);
         }
         else
         {
             if (GridView_RIESGOS_CONFIGURADOS.Rows.Count <= 0)
             {
-                //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "Para poder continuar debe especificar por lo menos un riesgo en la sección de RIESGOS DEL CLIENTE.", Proceso.Advertencia);
+                Informar(panelMensajeAdvertencia, lblMensajeAdvertencia, "Para poder continuar debe especificar por lo menos un riesgo en la sección de RIESGOS DEL CLIENTE.", Proceso.Advertencia);
             }
             else
             {
@@ -1018,37 +1013,37 @@ public partial class _Default : System.Web.UI.Page
     private void Buscar()
     {
 
-        //cliente _cliente = new cliente(Session["idEmpresa"].ToString(), Session["USU_LOG"].ToString());
+        cliente _cliente = new cliente(Session["idEmpresa"].ToString(), Session["USU_LOG"].ToString());
 
-        //DataTable tablaResultadosBusqueda = new DataTable();
-
-
-        //tablaResultadosBusqueda = _cliente.Buscar(TextBox_BUSCAR.Text);
+        DataTable tablaResultadosBusqueda = new DataTable();
 
 
-        //if (tablaResultadosBusqueda.Rows.Count <= 0)
-        //{
-        //    if (_cliente.MensajeError != null)
-        //    {
-        //        //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
-        //    }
-        //    else
-        //    {
-        //        //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "No se encontraron registros que cumplieran los datos de busqueda.", Proceso.Advertencia);
-        //    }
+        tablaResultadosBusqueda = _cliente.Buscar(TextBox_BUSCAR.Text);
 
-        //    Ocultar(Acciones.Inicio);
-        //    Mostrar(Acciones.Inicio);
 
-        //}
-        //else
-        //{
-        //    GridView_RESULTADOS_BUSQUEDA.DataSource = tablaResultadosBusqueda;
-        //    GridView_RESULTADOS_BUSQUEDA.DataBind();
+        if (tablaResultadosBusqueda.Rows.Count <= 0)
+        {
+            if (_cliente.MensajeError != null)
+            {
+                Informar(panelMensajeError, lblMensajeError, _cliente.MensajeError, Proceso.Error);
+            }
+            else
+            {
+                Informar(panelMensajeAdvertencia, lblMensajeAdvertencia, "No se encontraron registros que cumplieran los datos de busqueda.", Proceso.Advertencia);
+            }
 
-        //    Ocultar(Acciones.Inicio);
-        //    Mostrar(Acciones.BusquedaEncontrada);
-        //}
+            Ocultar(Acciones.Inicio);
+            Mostrar(Acciones.Inicio);
+
+        }
+        else
+        {
+            GridView_RESULTADOS_BUSQUEDA.DataSource = tablaResultadosBusqueda;
+            GridView_RESULTADOS_BUSQUEDA.DataBind();
+
+            Ocultar(Acciones.Inicio);
+            Mostrar(Acciones.BusquedaEncontrada);
+        }
     }
 
     protected void Button_BUSCAR_Click(object sender, EventArgs e)
@@ -1861,7 +1856,7 @@ public partial class _Default : System.Web.UI.Page
         {
             if (_seguridad.MensajeError != null)
             {
-                //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _seguridad.MensajeError, Proceso.Error);
+                Informar(panelMensajeError, lblMensajeError, _seguridad.MensajeError, Proceso.Error);
             }
 
             Panel_INFO_SIN_UNIDAD_NEGOCIO.Visible = true;
@@ -2084,7 +2079,7 @@ public partial class _Default : System.Web.UI.Page
 
         if (_cliente.MensajeError != null)
         {
-            //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, _cliente.MensajeError, Proceso.Error);
+            Informar(panelMensajeError, lblMensajeError, _cliente.MensajeError, Proceso.Error);
 
             Mostrar(Acciones.Inicio);
         }
@@ -2092,7 +2087,7 @@ public partial class _Default : System.Web.UI.Page
         {
             if (tablaEmpresa.Rows.Count <= 0)
             {
-                //Informar(Panel_FONDO_MENSAJE, Image_MENSAJE_POPUP, Panel_MENSAJES, Label_MENSAJE, "No se encontró una empresa con el ID: " + ID_EMPRESA.ToString(), Proceso.Error);
+                Informar(panelMensajeError, lblMensajeError, "No se encontró una empresa con el ID: " + ID_EMPRESA.ToString(), Proceso.Error);
 
                 Mostrar(Acciones.Inicio);
             }

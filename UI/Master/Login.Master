@@ -30,7 +30,7 @@
     </script>
 </head>
 <body>
-    <form id="loginForm" runat="server">
+    <form id="loginForm" defaultbutton="btnEntrera" runat="server">
     <ajaxToolkit:ToolkitScriptManager runat="server" ID="ajaxScriptManager" EnablePartialRendering="true"
         CombineScripts="false" />
     <div id="PanelLogin">
@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="DivBtn">
-            <asp:Button ID="btnEntrera" runat="server" Text="ENTRAR" CssClass='btn form-control btnHover'
+            <asp:Button ID="btnEntrera" ClientIDMode="Static" runat="server" Text="ENTRAR" CssClass='btn form-control btnHover'
                 OnClick="Button_ACEPTAR_Click" />
         </div>
         <div class="DivLnk">

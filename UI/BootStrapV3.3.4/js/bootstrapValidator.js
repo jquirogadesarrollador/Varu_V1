@@ -10,7 +10,7 @@
 if (typeof jQuery === 'undefined') {
     throw new Error('BootstrapValidator\'s JavaScript requires jQuery');
 }
-
+var variableContadora = 0;
 (function($) {
     var BootstrapValidator = function(form, options) {
         this.$form   = $(form);
@@ -496,9 +496,17 @@ if (typeof jQuery === 'undefined') {
          * @param {String} group
          * @returns {jQuery}
          */
-        _getMessageContainer: function($field, group) {
+        
+        _getMessageContainer: function ($field, group) {
+            variableContadora++;
+            if (variableContadora == 10)
+            {
+                variableContadora = 0;
+                return $field.parent()
+            }
             var $parent = $field.parent();
             if ($parent.is(group)) {
+                variableContadora = 0;
                 return $parent;
             }
 
@@ -511,6 +519,7 @@ if (typeof jQuery === 'undefined') {
             var n = cssClasses.length;
             for (var i = 0; i < n; i++) {
                 if (/^col-(xs|sm|md|lg)-\d+$/.test(cssClasses[i]) || /^col-(xs|sm|md|lg)-offset-\d+$/.test(cssClasses[i])) {
+                    variableContadora = 0;
                     return $parent;
                 }
             }
